@@ -1,0 +1,17 @@
+Options -Indexes
+DirectoryIndex index.php
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^(?:app|sql|tools)(?:/|$) - [F,L,NC]
+RewriteRule (^|/)\.(?!well-known/) - [F,L]
+RewriteRule ^(agendar|admin|login)/?$ $1.php [L,QSA,NC]
+RewriteRule ^auth/?$ login.php [L,QSA,NC]
+</IfModule>
+<FilesMatch "^(?:\.env|composer\.(?:json|lock)|package(?:-lock)?\.json|README.*|.*\.(?:md|sql|bak|log))$">
+Require all denied
+</FilesMatch>
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

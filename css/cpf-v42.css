@@ -1,0 +1,6 @@
+/* V42 CPF inputs, match Martelli identity */
+input[name="cpf"],input[name="new_client_cpf"]{font-variant-numeric:tabular-nums;letter-spacing:.025em}
+
+/* V53: chamada de login destacada nos conflitos de conta, mantendo contraste Martelli. */
+.booking-vip-login-link{display:table;margin-top:14px;padding:12px 16px;background:#e7c48b;color:#1b130f!important;border-radius:6px;font-weight:700;text-decoration:none;line-height:1.35}
+.booking-vip-login-link:hover,.booking-vip-login-link:focus-visible{background:#f3d6a4;outline:2px solid #fff;outline-offset:2px}

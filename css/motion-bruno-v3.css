@@ -1,0 +1,118 @@
+/* BRUNO V3 — Transições e novo slogan sobre a identidade visual Martelli.
+   Camada isolada: não altera o formulário de reservas nem o painel MySQL. */
+:root { --bruno-ease: cubic-bezier(.2,.75,.3,1); }
+
+/* Hero e tipografia: manter a marca legível mesmo em telas pequenas. */
+.hero.hero-v4-ref.hero-bruno-v3 { min-height: min(92svh, 850px); min-height: clamp(650px, 92svh, 850px); }
+.hero-bruno-v3 .hero-content { max-width: 1200px; padding-top: 82px; padding-bottom: 100px; }
+.hero-bruno-v3 .hero-logo { width: 218px; max-width: 48%; margin-bottom: 19px; }
+.hero-bruno-v3 h1 {
+  font-size: clamp(3rem, 6.25vw, 6.35rem);
+  line-height: 1.015;
+  font-weight: 400;
+  letter-spacing: -.035em;
+  max-width: 1090px;
+  margin: 8px auto 18px;
+  text-wrap: balance;
+}
+.hero-bruno-v3 h1 em { color: var(--gold); font-style: italic; }
+.hero-bruno-v3 p {
+  max-width: 660px;
+  font-size: clamp(14px, 1.25vw, 16px);
+  line-height: 1.8;
+  margin: 16px auto 32px;
+  color: #ede2d4;
+  text-wrap: pretty;
+}
+.hero-bruno-v3 .hero-photo {
+  transform: scale(1.035) translate3d(var(--bruno-bg-x,0px), var(--bruno-bg-y,0px), 0);
+  transform-origin: center;
+  transition: transform 1s var(--bruno-ease), filter .8s ease;
+}
+.hero-bruno-v3 .hero-gradient {
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(150,100,39,.055), transparent 47%),
+    linear-gradient(90deg, rgba(9,7,6,.80) 0%,rgba(10,8,7,.42) 50%,rgba(9,7,6,.80) 100%),
+    linear-gradient(0deg, rgba(10,8,7,.92),rgba(10,8,7,.07) 42%,rgba(8,7,6,.30));
+}
+.hero-bruno-v3 .hero-actions { gap: 14px; }
+.hero-bruno-v3 .hero-actions .button { min-height: 52px; padding-inline: 27px; position: relative; isolation: isolate; }
+.hero-bruno-v3 .hero-actions .button:before {
+  content:""; position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.14) 48%,transparent 74%);
+  transform:translateX(-125%); transition:transform .7s var(--bruno-ease);
+  pointer-events:none;
+}
+.hero-bruno-v3 .hero-actions .button:hover:before { transform:translateX(125%); }
+.hero-bruno-v3 .eyebrow { text-shadow:0 0 14px rgba(197,160,93,.2); }
+
+/* Coreografia de entrada: animações não escondem conteúdo se o JS falhar. */
+@keyframes bruno-hero-reveal {
+  from { opacity:0; transform:translateY(20px); filter:blur(3px); }
+  to { opacity:1; transform:translateY(0); filter:blur(0); }
+}
+@keyframes bruno-photo-arrive {
+  from { transform:scale(1.13); }
+  to { transform:scale(1.035); }
+}
+@media (prefers-reduced-motion:no-preference) {
+  .hero-bruno-v3 .hero-content > .eyebrow { animation:bruno-hero-reveal .72s both .06s var(--bruno-ease); }
+  .hero-bruno-v3 .hero-logo { animation:bruno-hero-reveal .86s both .16s var(--bruno-ease); }
+  .hero-bruno-v3 h1 { animation:bruno-hero-reveal 1s both .28s var(--bruno-ease); }
+  .hero-bruno-v3 .hero-content > p { animation:bruno-hero-reveal .92s both .43s var(--bruno-ease); }
+  .hero-bruno-v3 .hero-actions { animation:bruno-hero-reveal .9s both .56s var(--bruno-ease); }
+  .hero-bruno-v3 .hero-photo { animation:bruno-photo-arrive 2.2s both var(--bruno-ease); }
+}
+
+/* Entrada ao rolar, aplicada só após o observador JS estar ativo. */
+.bruno-motion-ready [data-motion].bruno-motion-pending {opacity:0;transform:translate3d(0,26px,0)}
+.bruno-motion-ready [data-motion] { transition:opacity .66s var(--bruno-ease),transform .66s var(--bruno-ease); }
+.bruno-motion-ready [data-motion].bruno-motion-visible {opacity:1;transform:none;}
+
+/* Interações nos componentes existentes: não sobrepor controles de agenda. */
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+  .v4-team .barber-card,.v4-services .service-row,
+  .v4-hours .hours-row,.v4-contact .contact-details,
+  .v4-services .filter-pill,.v4-services .service-card-link {
+    transition:background-color .28s var(--bruno-ease),
+      border-color .28s var(--bruno-ease),box-shadow .28s var(--bruno-ease),
+      color .28s var(--bruno-ease),transform .28s var(--bruno-ease);
+  }
+  .v4-team .barber-card:hover {
+    transform:translateY(-4px); border-color:rgba(197,160,93,.66);
+    box-shadow:0 18px 35px rgba(0,0,0,.30);
+  }
+  .v4-services .service-row:hover {background:#241b14;padding-left:18px;}
+  .v4-hours .hours-row:hover { background:rgba(197,160,93,.05); }
+  .v4-services .filter-pill:hover { border-color:var(--gold); }
+  .v4-services .service-card-link:hover { border-color:var(--gold); }
+}
+
+/* Trilho discreto de leitura: criado no JS apenas na homepage. */
+.bruno-scroll-progress { position:fixed;left:0;top:0;width:0;height:3px;background:linear-gradient(90deg,#41835d,#ddcaa9,#ac5148);z-index:1000;pointer-events:none; }
+.site-header { transition:box-shadow .28s ease,background .28s ease,border-color .28s ease; }
+.site-header.is-scrolled { box-shadow:0 13px 32px rgba(0,0,0,.38);border-bottom-color:rgba(197,160,93,.38); }
+
+@media (max-width:760px) {
+  .hero.hero-v4-ref.hero-bruno-v3 { min-height: 650px; }
+  .hero-bruno-v3 .hero-content { padding:68px 0 85px; }
+  .hero-bruno-v3 .hero-logo { width:185px;max-width:58%;margin-bottom:16px; }
+  .hero-bruno-v3 h1 {font-size:clamp(2.75rem,8.6vw,4.8rem);line-height:1.05;letter-spacing:-.027em;}
+  .hero-bruno-v3 p { max-width:480px; }
+}
+@media (max-width:520px) {
+  .hero.hero-v4-ref.hero-bruno-v3 { min-height:620px; }
+  .hero-bruno-v3 .hero-content { padding:50px 0 73px; }
+  .hero-bruno-v3 .hero-logo { width:157px;max-width:55%;margin-bottom:13px; }
+  .hero-bruno-v3 h1 { font-size:clamp(2.45rem,10.2vw,3.4rem);line-height:1.045;letter-spacing:-.025em; }
+  .hero-bruno-v3 p { font-size:13px; max-width:360px;line-height:1.72;margin:14px auto 26px; }
+  .hero-bruno-v3 .hero-actions { gap:11px;width:min(100%,310px); }
+  .hero-bruno-v3 .hero-actions .button {min-height:49px;width:100%;}
+}
+@media (prefers-reduced-motion:reduce) {
+  .hero-bruno-v3 .hero-photo { animation:none!important;transform:none!important;transition:none!important; }
+  .hero-bruno-v3 .hero-content > *,
+  .hero-bruno-v3 .hero-actions { animation:none!important;transition:none!important;filter:none!important; }
+  .bruno-motion-ready [data-motion] {opacity:1!important;transform:none!important;transition:none!important;}
+  .bruno-scroll-progress {display:none;}
+}

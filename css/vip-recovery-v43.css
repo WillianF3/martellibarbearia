@@ -1,0 +1,13 @@
+/* V43: recuperação de acesso ao encontrar CPF já associado a outro WhatsApp. */
+.vip-duplicate-help{margin-top:13px;border-top:1px solid rgba(242,207,153,.3);padding-top:13px}
+.vip-duplicate-help p{margin:0 0 12px;line-height:1.6;color:#ffe6d9;font-size:13px}
+.vip-duplicate-actions{display:flex;gap:9px;flex-wrap:wrap}
+.vip-duplicate-actions a{display:inline-flex;justify-content:center;align-items:center;min-height:44px;padding:10px 13px;box-sizing:border-box;border-radius:7px;font-weight:800;font-size:12px;text-decoration:none!important}
+.vip-recovery-primary{background:#e9c58c;color:#21170f!important}
+.vip-recovery-secondary{border:1px solid #d3b077;color:#f7d9ab!important}
+.vip-recovery-notice{margin-top:22px;padding:19px 20px;border:1px solid #967548;border-radius:12px;background:#302318;color:#f7e4ca}
+.vip-recovery-notice[hidden]{display:none}
+.vip-recovery-notice h2{font-size:clamp(20px,4vw,27px);margin:0 0 8px}
+.vip-recovery-notice p{font-size:13px;line-height:1.65;color:#ead5bc;margin:8px 0}
+.vip-recovery-notice a{display:inline-flex;color:#efd09b;font-size:13px;font-weight:800;margin-top:8px;text-decoration:underline}
+@media(max-width:540px){.vip-duplicate-actions{flex-direction:column}.vip-duplicate-actions a{width:100%}}

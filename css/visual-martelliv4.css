@@ -1,0 +1,86 @@
+/* BRUNO V2 / VISUAL MARTELLI V4
+   Camada visual isolada. Preserva scripts, API, admin e agendamento da versão Bruno V1. */
+
+/* Cabeçalho e marca com presença próxima ao Martelli V4 */
+.site-header { background:rgba(16,14,12,.96); border-bottom:1px solid #4d3d2c; }
+.site-header .header-inner { min-height:86px;height:auto; }
+.site-header .brand img { width:168px; max-height:77px; object-fit:contain; }
+.site-header .main-nav>a:not(.button) { font-size:12px; }
+
+/* Hero: volta ao layout centralizado, fotografia inteira e degradê escuro. */
+.hero.hero-v4-ref { min-height:min(91vh,850px);min-height:690px;position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:0; }
+.hero-v4-ref .hero-photo { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.46) saturate(.82);z-index:-2; }
+.hero-v4-ref .hero-gradient { position:absolute;inset:0;width:100%;height:100%;z-index:-1;background:linear-gradient(90deg,rgba(12,10,8,.68),rgba(10,8,7,.27),rgba(12,10,8,.68)),linear-gradient(0deg,rgba(16,14,12,.94),transparent 34%); }
+.hero-v4-ref .hero-content { display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;padding:96px 0 106px;max-width:1120px; }
+.hero-v4-ref .eyebrow { letter-spacing:.26em;margin:0 0 12px;color:var(--gold);font-size:11px; }
+.hero-v4-ref .hero-logo { display:block;width:250px;max-width:65%;height:auto;object-fit:contain;margin:12px auto 30px;filter:drop-shadow(0 5px 15px #0008); }
+.hero-v4-ref h1 { font-family:var(--display);font-size:clamp(3.3rem,6.3vw,6.1rem);font-weight:400;line-height:1.07;letter-spacing:-.025em;margin:0 0 15px;text-wrap:balance;color:var(--ink); }
+.hero-v4-ref h1 em { font-style:italic;color:var(--gold); }
+.hero-v4-ref p { font-size:15px;line-height:1.75;max-width:550px;margin:10px auto 28px;color:#e7ddd2;text-align:center; }
+.hero-v4-ref .hero-actions {display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;}
+.hero-v4-ref .hero-actions .button{min-width:145px;box-shadow:none;}
+.hero-v4-ref .hero-side{right:26px;bottom:28px;color:#bda67e;z-index:1;}
+
+/* Menu de serviços: uma linha por serviço como na V4, mantendo o React e filtros. */
+.v4-services .section-heading, .v4-team .section-heading { max-width:630px;margin:0 auto 52px;text-align:center; }
+.v4-services .section-heading h2,.v4-team .section-heading h2 { font-size:clamp(2.4rem,4vw,3.7rem); }
+.v4-services .react-services.react-ready { max-width:930px;margin:auto; }
+.v4-services .service-explorer-toolbar {background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:5px 0 23px;margin-bottom:8px;gap:12px;}
+.v4-services .service-filter-tabs {gap:7px;}
+.v4-services .service-filter-tabs .filter-pill {border:1px solid #6b5439;background:#16120e;color:#d6bf94;border-radius:3px;padding:8px 12px;min-height:39px;}
+.v4-services .service-filter-tabs .filter-pill.active {background:#c5a05d;color:#140e08;border-color:#c5a05d;}
+.v4-services .service-search {border:1px solid #65513b;background:#15120f;border-radius:3px;}
+.v4-services .service-search input{background:transparent;min-height:38px;}
+.v4-services .service-cards-grid {display:grid;grid-template-columns:1fr;gap:0;}
+.v4-services .service-v5-card {display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"head bottom" "body bottom";gap:1px 24px;align-items:center;min-height:115px;padding:18px 8px;background:transparent;border:0;border-bottom:1px solid var(--line);box-shadow:none;border-radius:0;transform:none!important;}
+.v4-services .service-v5-card::before{display:none;}
+.v4-services .service-v5-card:hover,.v4-services .service-v5-card:focus-within{background:#221b14;box-shadow:none;}
+.v4-services .service-card-top{grid-area:head;display:flex;align-items:center;gap:14px;justify-content:flex-start;}
+.v4-services .service-card-number{color:var(--gold);font-size:11px;font-weight:800;min-width:24px;}
+.v4-services .service-card-duration{order:2;color:#b6a18a;font-size:12px;}
+.v4-services .service-card-body{grid-area:body;min-width:0;padding-left:38px;}
+.v4-services .service-card-body h3{font:normal clamp(1.4rem,2.5vw,2rem)/1.2 var(--display);margin:0 0 3px;color:#f3ebe0;}
+.v4-services .service-card-body p{font-size:12px;color:var(--muted);margin:0;}
+.v4-services .service-card-bottom{grid-area:bottom;display:flex;gap:16px;align-items:center;justify-content:flex-end;}
+.v4-services .service-card-price{font:normal clamp(1.35rem,2.3vw,1.8rem) var(--display);color:var(--gold);white-space:nowrap;}
+.v4-services .service-card-link{min-width:98px;border:1px solid #80633f;padding:9px 11px;color:var(--gold-light);border-radius:2px;background:transparent;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;display:inline-flex;gap:8px;align-items:center;justify-content:center;}
+.v4-services .service-card-link:hover,.v4-services .service-card-link:focus-visible{background:#40301d;}
+.v4-services .services-fallback{max-width:930px;margin:auto;}
+
+/* Seções simples e alinhamento do visual V4. */
+.v4-team .barbers-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;}
+.v4-team .barber-card{border:1px solid #4c3928;padding:27px;background:#100e0c;border-radius:2px;}
+.v4-team .barber-book-link{font-size:12px;color:var(--gold-light);display:inline-flex;margin-top:12px;gap:8px;align-items:center;}
+.v4-manifesto {text-align:center;padding:98px 0;background:linear-gradient(125deg,#21170e,#130f0d);border-block:1px solid #40301f;}
+.v4-manifesto h2{margin:20px 0;font-size:clamp(2.5rem,4.2vw,4.1rem);line-height:1.13;}
+.v4-manifesto p{color:var(--muted);max-width:580px;margin:0 auto 30px;}
+.v4-contact .contact-details,.v4-hours .hours-card{border-radius:3px;}
+.v4-closing{background:#241a12;text-align:center;padding:90px 20px;}
+
+@media (max-width:760px){
+  .site-header .header-inner{min-height:72px;}
+  .site-header .brand img{width:130px;max-height:64px;}
+  .hero.hero-v4-ref{min-height:665px;}
+  .hero-v4-ref .hero-content{padding:72px 0 95px;}
+  .hero-v4-ref h1{font-size:clamp(2.55rem,9vw,4.5rem);line-height:1.08;}
+  .hero-v4-ref .hero-logo{width:225px;margin:9px auto 25px;}
+  .hero-v4-ref .hero-side{display:none;}
+  .v4-services .service-explorer-toolbar{flex-direction:column;align-items:stretch;}
+  .v4-services .service-filter-tabs{flex-wrap:wrap;}
+  .v4-team .barbers-grid{grid-template-columns:1fr;}
+}
+@media (max-width:520px){
+  .hero.hero-v4-ref{min-height:640px;}
+  .hero-v4-ref .hero-content{padding:55px 0 75px;}
+  .hero-v4-ref h1{font-size:clamp(2.3rem,10.5vw,3.4rem);}
+  .hero-v4-ref p{font-size:13px;max-width:340px;margin-bottom:24px;}
+  .hero-v4-ref .hero-logo{width:195px;}
+  .hero-v4-ref .hero-actions{display:flex;flex-direction:column;align-items:stretch;gap:9px;width:min(100%,320px);}
+  .hero-v4-ref .hero-actions .button{width:100%;}
+  .v4-services .service-v5-card{grid-template-columns:1fr;grid-template-areas:"head" "body" "bottom";gap:8px;min-height:0;padding:19px 10px;}
+  .v4-services .service-card-body{padding-left:38px;}
+  .v4-services .service-card-bottom{justify-content:space-between;padding-left:38px;margin-top:7px;}
+  .v4-services .service-card-link{min-height:37px;}
+  .v4-manifesto{padding:75px 0;}
+}
+@media (prefers-reduced-motion:reduce){.hero-v4-ref .hero-content{animation:none!important}}

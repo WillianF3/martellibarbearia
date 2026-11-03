@@ -1,0 +1,49 @@
+/* MARTELLI VIP V22 — pré-cadastro público, preto e dourado */
+.vip-join{background:radial-gradient(ellipse at 90% 2%,#3b2816 0%,transparent 46%),linear-gradient(160deg,#14100d 0%,#0f0e0c 54%,#20170f 100%);color:#f9ebd8;padding-bottom:65px;font-family:'Manrope',Arial,sans-serif;min-height:70vh}
+.vip-join-top{padding-top:clamp(55px,8vw,105px);padding-bottom:42px;border-bottom:1px solid #5b422b}
+.vip-join .eyebrow{color:#d9b074;font-size:11px;letter-spacing:.16em;font-weight:800}
+.vip-join h1,.vip-join h2,.vip-join h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;color:#f9eee2}
+.vip-join h1{font-size:clamp(2.8rem,7vw,6.3rem);line-height:1.04;letter-spacing:-.025em;margin:14px 0 19px}
+.vip-join h1 em{color:#d3ae6e}.vip-join-top>p{font-size:clamp(.96rem,1.4vw,1.15rem);max-width:740px;line-height:1.8;color:#d3bfaa}
+.vip-join-steps{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.vip-join-steps span{border:1px solid #765436;border-radius:50px;color:#e7cda5;padding:9px 15px;font-size:12px;display:flex;align-items:center;gap:10px}
+.vip-join-steps b{color:#e2b86c;font-size:11px}
+.vip-join-content{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);gap:clamp(22px,4vw,58px);padding-top:46px;align-items:start}
+.vip-join-section-heading h2,.vip-join-form-panel h2{font-size:clamp(2rem,3.8vw,3rem);margin:8px 0 9px;line-height:1.14}
+.vip-join-section-heading p,.vip-join-form-panel>p{font-size:13px;line-height:1.8;color:#c5b09b;margin:5px 0 23px}
+.vip-join-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.vip-join-plan{font:inherit;text-align:left;border:1px solid #755638;background:linear-gradient(150deg,#302219,#1c1612 80%);border-radius:14px;padding:25px 22px;color:#f0e5d2;cursor:pointer;min-height:285px;display:flex;flex-direction:column;gap:13px;transition:transform .18s,border-color .18s,box-shadow .18s;position:relative}
+.vip-join-plan:hover{transform:translateY(-3px);border-color:#e0b873;box-shadow:0 18px 40px #0004}
+.vip-join-plan.chosen{border-color:#f2ca85;box-shadow:0 0 0 2px #b28b51,0 15px 45px #0005}
+.vip-join-plan:focus-visible{outline:2px solid #ffe0ac;outline-offset:4px}
+.vip-join-plan-kicker{font-size:10px;font-weight:800;letter-spacing:.16em;color:#d5af78}
+.vip-join-plan strong{font:400 clamp(1.7rem,2.5vw,2.25rem)/1.08 'DM Serif Display',Georgia,serif;color:#fff2dd}
+.vip-join-plan-desc{font-size:12px;color:#cdb9a7;line-height:1.65;min-height:39px}
+.vip-join-plan-price{font-size:1.45rem;font-weight:800;color:#ecc98c}.vip-join-plan-price small{font-size:11px;color:#c8a97e;font-weight:500}
+.vip-join-plan-cuts{font-size:12px;color:#ecdbbe}.vip-join-select-label{margin-top:auto;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#eac98d}
+.vip-join-muted{color:#d4b999;line-height:1.6;font-size:14px}
+.vip-join-form-panel{background:#231a15;border:1px solid #8d673e;border-radius:18px;padding:clamp(20px,3vw,35px);box-shadow:0 35px 70px #0006;scroll-margin-top:90px}
+.vip-join-form-panel form{display:grid;gap:12px}
+.vip-join-form-panel label:not(.vip-join-consent){color:#e8c28b;font-size:12px;font-weight:800;margin-top:4px}
+.vip-join-form-panel label small{color:#ac9a87;font-weight:500}
+.vip-join-form-panel input:not([type=checkbox]),.vip-join-form-panel select,.vip-join-form-panel textarea{background:#120f0d;border:1px solid #76563d;border-radius:8px;color:#f8eee3;min-width:0;width:100%;box-sizing:border-box;padding:13px 15px;font:500 13px 'Manrope',Arial,sans-serif;color-scheme:dark;outline:none}
+.vip-join-form-panel input:focus,.vip-join-form-panel textarea:focus,.vip-join-form-panel select:focus{border-color:#e5c68d;box-shadow:0 0 0 2px #c5a07033}
+.vip-join-selected{color:#e5c88e;background:#36281c;padding:12px 13px;border-radius:8px;font-size:12px;line-height:1.6}
+.vip-join-consent{display:flex;align-items:flex-start;gap:12px;font-size:12px;line-height:1.7;color:#d6c2ae;margin:12px 0 6px}
+.vip-join-consent input{accent-color:#d9b172;width:17px;height:17px;flex:0 0 auto;margin-top:3px}
+.vip-join-consent a{color:#f0cf9a;text-decoration:underline;text-underline-offset:3px}
+.vip-join-submit{border:1px solid #e6c48c;background:#e6c48c;color:#1a110a;padding:16px 20px;font:800 12px 'Manrope',sans-serif;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:7px;cursor:pointer;text-decoration:none;min-height:50px;margin-top:9px}
+.vip-join-submit:hover{background:#f7d7a1}.vip-join-submit:disabled{opacity:.55;cursor:not-allowed}
+.vip-join-alert{color:#ffd5ce;background:#4d2523;border:1px solid #a25a50;border-radius:8px;padding:12px;font-size:12px;line-height:1.6}
+.vip-join-success{border:1px solid #59835d;background:#183124;border-radius:12px;padding:27px;line-height:1.7;color:#e2f4df}.vip-join-success h3{font-size:2rem;margin:7px 0 10px}.vip-join-success p{color:#d5e5d4;font-size:13px}.vip-join-success .vip-join-submit{margin-top:23px;display:inline-flex}
+.vip-join-check{font-size:28px;color:#b7eac0}
+.vip-join-footnote{padding-top:30px}.vip-join-footnote p{color:#a99b88;max-width:1000px;font-size:12px;line-height:1.8}
+.vip-honeypot{position:absolute!important;left:-10000px!important;width:1px;height:1px;overflow:hidden}
+.vip-card-select{font:800 11px 'Manrope',sans-serif;letter-spacing:.04em;color:#e7c88e;text-transform:uppercase;text-decoration:none;justify-self:start;grid-column:1/-1}
+.vip-card-select:hover{text-decoration:underline}
+@media(max-width:980px){.vip-join-content{grid-template-columns:1fr}.vip-join-form-panel{max-width:650px;width:100%;box-sizing:border-box}}
+@media(max-width:600px){.vip-join-top{padding-top:40px;padding-bottom:30px}.vip-join-steps{display:grid;grid-template-columns:1fr;gap:7px}.vip-join-steps span{justify-content:flex-start}.vip-join-content{padding-top:30px}.vip-join-grid{grid-template-columns:1fr}.vip-join-plan{min-height:245px}.vip-join-form-panel{padding:23px 17px}}
+@media(prefers-reduced-motion:reduce){.vip-join-plan{transition:none}.vip-join-plan:hover{transform:none}}
+
+/* V24: acesso de assinantes já aprovados */
+.vip-login-banner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;margin-top:24px;background:linear-gradient(120deg,#2f2318,#1b1713);border:1px solid #aa814c;border-radius:13px;padding:20px 23px}.vip-login-banner>div{display:grid;gap:5px}.vip-login-banner strong{font:400 1.4rem 'DM Serif Display',Georgia,serif;color:#fff2e3}.vip-login-banner span{font-size:.82rem;color:#dac7b3;line-height:1.5}.vip-login-cta{display:inline-block;white-space:normal;text-align:center;border-radius:8px;background:#e6bd80;color:#1e130d;padding:14px 18px;font-size:.78rem;font-weight:800;text-decoration:none}.vip-login-cta:hover{background:#f4d19b}@media(max-width:580px){.vip-login-banner{align-items:stretch}.vip-login-cta{width:100%;box-sizing:border-box}}

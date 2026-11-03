@@ -1,0 +1,8 @@
+.vip-password-wrap{display:flex;position:relative;align-items:center}.vip-password-wrap input{padding-right:86px}.vip-password-toggle{position:absolute;right:8px;top:4px;padding:12px 11px;background:transparent;color:#eac792;border:0;cursor:pointer;font:700 12px Manrope,Arial,sans-serif}.vip-login-support-links{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin:16px 0 3px}.vip-login-support-links a{color:#ebc389;font-size:13px}.vip-connection-notice{margin-top:18px;border:1px solid #b69359;background:#32291c;padding:18px;border-radius:12px;color:#f6ddaa}.vip-connection-notice p{color:#eedac2;font-size:13px;line-height:1.65;margin:8px 0 0}.vip-action-link{display:inline-flex;justify-content:center;align-items:center;text-decoration:none!important;max-width:100%;box-sizing:border-box}.vip-recovery-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.vip-action-outline{display:inline-flex;padding:13px 16px;border:1px solid #b69359;border-radius:8px;color:#f7d9a4;text-decoration:none}.vip-login-panel a:not(.vip-login-primary):focus-visible{outline:2px solid #e6c18a;outline-offset:3px}@media(max-width:550px){.vip-login-support-links{flex-direction:column}}
+
+/* Martelli V45: confirmação clara após retorno Google sem conta vinculada */
+.vip-connection-notice {border:1px solid #ad8957; border-radius:12px; padding:18px 20px; margin:18px 0; background:#30241c; color:#f2e0cb;}
+.vip-connection-notice strong {color:#e9c386;}
+.vip-connection-notice p {line-height:1.55; margin:10px 0 0;}
+.vip-connection-notice .vip-link-privacy {font-size:.88rem; color:#d7c2a9;}
+.vip-connection-notice a {color:#f0ce8f; text-decoration:underline;}

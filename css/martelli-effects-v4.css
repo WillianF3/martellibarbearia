@@ -1,0 +1,111 @@
+/* MARTELLI V4.0 — Interações premium, sem alterar a seção hero.
+   Camada visual independente: menu, cartões e entrada das seções. */
+:root { --mt-ease: cubic-bezier(.22,.72,.22,1); }
+
+/* Navegação desktop — linha dourada, hover e foco visível. */
+.site-header .brand { transition: filter .28s var(--mt-ease), transform .28s var(--mt-ease); }
+.site-header .main-nav > a:not(.button) { position:relative; padding-block:10px; transition: color .24s var(--mt-ease); }
+.site-header .main-nav > a:not(.button)::after {
+  content:"";position:absolute;left:0;right:0;bottom:3px;height:2px;
+  background:linear-gradient(90deg,#137544 0%,#d9c29d 50%,#b33f39 100%);
+  border-radius:3px;transform:scaleX(0);transform-origin:center;
+  transition:transform .3s var(--mt-ease);
+}
+.site-header .main-nav > a:not(.button):hover::after,
+.site-header .main-nav > a:not(.button):focus-visible::after,
+.site-header .main-nav > a.is-current:not(.button)::after { transform:scaleX(1); }
+.site-header .main-nav > a.is-current:not(.button) {color:#e8c88b;}
+.site-header .main-nav > .button { transition:transform .25s ease,box-shadow .25s ease,background .25s ease; }
+.site-header .main-nav > .button:hover,
+.site-header .main-nav > .button:focus-visible {box-shadow:0 9px 25px rgba(197,160,93,.27);}
+
+/* Botão do menu com barras animadas — vira X ao abrir. */
+.site-header .menu-toggle {
+  position:relative;width:49px;height:49px;min-width:49px;padding:0;
+  display:none;align-items:center;justify-content:center;
+  border:1px solid #756044;border-radius:7px;background:#18130f;
+  transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;
+}
+.site-header .menu-toggle:hover,.site-header .menu-toggle:focus-visible {
+  background:#2a1f16;border-color:#c5a05d;box-shadow:0 0 0 3px rgba(197,160,93,.09);
+}
+.menu-toggle-bars{width:22px;height:19px;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none;}
+.menu-toggle-bars span{width:100%;height:2px;display:block;background:#d8b374;border-radius:10px;transform-origin:center;transition:transform .3s ease,opacity .2s ease;}
+.site-header .menu-toggle[aria-expanded="true"] .menu-toggle-bars span:nth-child(1){transform:translateY(8.5px) rotate(45deg);}
+.site-header .menu-toggle[aria-expanded="true"] .menu-toggle-bars span:nth-child(2){opacity:0;transform:scaleX(0);}
+.site-header .menu-toggle[aria-expanded="true"] .menu-toggle-bars span:nth-child(3){transform:translateY(-8.5px) rotate(-45deg);}
+
+/* Cartões com profundidade suave e reflexo dependente da posição do mouse. */
+.v4-team .barber-card.martelli-tilt,
+.v4-services .service-v5-card.martelli-tilt,
+.v4-hours .hours-card.martelli-tilt,
+.v4-contact .instagram-spotlight.martelli-tilt {
+  --mt-rx:0deg;--mt-ry:0deg;--mt-shine-x:50%;--mt-shine-y:40%;
+  transform:perspective(1150px) rotateX(var(--mt-rx)) rotateY(var(--mt-ry)) translateY(0) !important;
+  transform-style:preserve-3d;
+  transition:transform .32s var(--mt-ease),border-color .26s ease,box-shadow .3s ease,background .26s ease;
+  will-change:transform;
+}
+.v4-team .barber-card.martelli-tilt:hover,
+.v4-services .service-v5-card.martelli-tilt:hover,
+.v4-hours .hours-card.martelli-tilt:hover,
+.v4-contact .instagram-spotlight.martelli-tilt:hover {
+  transform:perspective(1150px) rotateX(var(--mt-rx)) rotateY(var(--mt-ry)) translateY(-4px) !important;
+  box-shadow:0 24px 42px rgba(0,0,0,.4);
+  border-color:rgba(206,166,100,.65);
+}
+.v4-team .barber-card.martelli-tilt{position:relative;overflow:hidden;isolation:isolate;}
+.v4-team .barber-card.martelli-tilt::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse 65% 70% at var(--mt-shine-x) var(--mt-shine-y),rgba(246,216,168,.15),transparent 75%);
+  opacity:0;transition:opacity .3s ease;
+}
+.v4-team .barber-card.martelli-tilt:hover::after{opacity:1;}
+.v4-team .barber-card.martelli-tilt > *{position:relative;z-index:1;}
+.v4-services .service-v5-card.martelli-tilt{overflow:hidden;}
+.v4-hours .hours-card.martelli-tilt {border-radius:9px;}
+.v4-services .service-row { transition:background .28s ease,border-color .28s ease,padding-left .28s ease; }
+.v4-services .service-row:hover {border-color:rgba(197,160,93,.65);}
+
+/* Entrada suave somente após o elemento entrar em tela. Não escondemos o conteúdo
+   antes do JS: isso evita espaços vazios ou piscadas na primeira pintura. */
+@keyframes mt-section-enter {
+  0%{opacity:.76;transform:translate3d(0,15px,0)}
+  100%{opacity:1;transform:translate3d(0,0,0)}
+}
+.martelli-section-entered {animation:mt-section-enter .62s var(--mt-ease) both;}
+
+/* Overlay clicável para fechar o menu sem prender a interface. */
+.martelli-menu-scrim{position:fixed;inset:0;z-index:29;border:0;background:rgba(0,0,0,.65);backdrop-filter:blur(3px);width:100%;height:100%;cursor:default;}
+.martelli-menu-scrim[hidden]{display:none!important;}
+
+@media (hover:hover) and (pointer:fine) {
+  .site-header .brand:hover {transform:translateY(-1px);filter:drop-shadow(0 4px 11px rgba(197,160,93,.22));}
+}
+@media(max-width:760px){
+  .site-header .menu-toggle{display:flex;z-index:32;}
+  .site-header .main-nav{
+    top:calc(100% - 1px);padding:16px 16px 19px;gap:6px;
+    max-height:calc(100dvh - 84px);overflow-y:auto;
+    background:linear-gradient(160deg,#231a13,#120e0b 85%);
+    border:1px solid rgba(197,160,93,.34);border-top:2px solid #c5a05d;
+    border-radius:0 0 12px 12px;box-shadow:0 23px 40px rgba(0,0,0,.5);
+  }
+  .site-header .main-nav.open{display:flex;animation:mt-menu-drop .28s var(--mt-ease) both;}
+  .site-header .main-nav>a:not(.button){width:100%;padding:12px 14px;border:1px solid transparent;border-radius:6px;min-height:45px;}
+  .site-header .main-nav>a:not(.button)::after{left:12px;right:12px;bottom:6px;}
+  .site-header .main-nav>a:not(.button):hover,
+  .site-header .main-nav>a:not(.button):focus-visible,
+  .site-header .main-nav>a.is-current:not(.button){background:rgba(197,160,93,.11);border-color:rgba(197,160,93,.18);}
+  .site-header .main-nav .button{width:100%;align-self:stretch;min-height:47px;}
+  .martelli-menu-open{overflow:hidden;}
+  .martelli-tilt{will-change:auto!important;transform:none!important;}
+  .martelli-tilt:hover{transform:none!important;}
+}
+@keyframes mt-menu-drop { from {opacity:.35;transform:translateY(-12px) scale(.985)} to {opacity:1;transform:translateY(0) scale(1)} }
+@media(prefers-reduced-motion:reduce){
+  .martelli-section-entered{animation:none!important;transform:none!important;opacity:1!important;}
+  .site-header .menu-toggle *, .site-header .main-nav,.site-header .brand,
+  .site-header .main-nav > *, .martelli-tilt{transition:none!important;animation:none!important;}
+  .martelli-tilt,.martelli-tilt:hover{transform:none!important;will-change:auto!important;}
+}

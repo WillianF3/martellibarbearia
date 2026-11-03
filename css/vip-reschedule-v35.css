@@ -1,0 +1,54 @@
+/* Martelli V35 – janela de remarcação VIP acessível, adaptável e organizada. */
+dialog#vip-reschedule-dialog.vip-reschedule-dialog{width:min(96vw,720px);max-height:min(92dvh,860px);overflow:auto;background:#201813;border:1px solid #b88c54;border-radius:16px;color:#f6e7d2;box-shadow:0 25px 70px #000b}
+#vip-reschedule-dialog .vip-booking-dialog-inner{padding:clamp(16px,3vw,30px)}
+#vip-reschedule-dialog .vip-reschedule-top{display:flex;justify-content:space-between;align-items:flex-start;gap:15px}
+#vip-reschedule-dialog h2{font:400 clamp(1.6rem,4vw,2.1rem) 'DM Serif Display',Georgia,serif;margin:5px 0 10px;line-height:1.18}
+#vip-reschedule-dialog .vip-reschedule-x{flex:none;border:1px solid #806344!important;border-radius:9px!important;background:#34251b!important;color:#f4d9b0!important;width:38px;height:38px;font-size:1.4rem!important;cursor:pointer}
+#vip-reschedule-dialog .vip-reschedule-old{background:#30241c;border-left:3px solid #dcb77c;padding:12px;border-radius:6px;font-weight:700;color:#f6dfb8;margin:7px 0 13px}
+#vip-reschedule-dialog .vip-reschedule-intro{font-size:.86rem;line-height:1.55;margin:0 0 14px}
+#vip-reschedule-dialog .vip-reschedule-validity{padding:12px 14px;background:#31271c;border:1px solid #866a42;border-radius:9px;color:#f1d2a2!important;font-size:.8rem;line-height:1.65;margin-bottom:17px}
+#vip-reschedule-dialog .vip-reschedule-label,#vip-reschedule-dialog .vip-reschedule-manual{font-size:.82rem;font-weight:750;color:#e8c58d;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;margin:13px 0}
+#vip-reschedule-dialog .vip-reschedule-label select{width:min(100%,365px);padding:12px 14px}
+#vip-reschedule-dialog .vip-reschedule-manual input{max-width:235px;padding:11px 12px}
+#vip-reschedule-dialog .vip-reschedule-date-header,#vip-reschedule-dialog .vip-reschedule-slots-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:18px;color:#f4d39e;font-size:.87rem}
+#vip-reschedule-dialog .vip-reschedule-date-header span,#vip-reschedule-dialog .vip-reschedule-slots-heading span{font-size:.71rem;font-weight:500;color:#ceb79c}
+#vip-reschedule-dialog .vip-reschedule-date-controls{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:11px 0;color:#ecd1a7}
+#vip-reschedule-dialog .vip-reschedule-date-controls strong{font-size:.83rem;text-align:center;font-variant-numeric:tabular-nums}
+#vip-reschedule-dialog .vip-reschedule-date-controls button{background:#30231a!important;border:1px solid #896640!important;color:#f5d5a2!important;width:36px;height:36px;flex:none;border-radius:8px!important;font-size:1.5rem;cursor:pointer}
+#vip-reschedule-dialog .vip-reschedule-date-controls button:disabled{opacity:.3;cursor:not-allowed}
+#vip-reschedule-dialog .vip-reschedule-day-rail{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-bottom:10px}
+#vip-reschedule-dialog .vip-reschedule-day{display:flex!important;align-items:center;flex-direction:column;justify-content:center;min-width:0;min-height:73px;gap:4px;border:1px solid #70523a!important;border-radius:9px!important;background:#30241c!important;color:#f7e0be!important;padding:8px 1px!important;cursor:pointer}
+#vip-reschedule-dialog .vip-reschedule-day span,#vip-reschedule-dialog .vip-reschedule-day small{font-size:.65rem;color:#d7b99c}
+#vip-reschedule-dialog .vip-reschedule-day strong{font-size:1.13rem;font-variant-numeric:tabular-nums}
+#vip-reschedule-dialog .vip-reschedule-day.chosen{background:#e1b77b!important;color:#25170d!important;border-color:#f3d2a1!important}
+#vip-reschedule-dialog .vip-reschedule-day.chosen span,#vip-reschedule-dialog .vip-reschedule-day.chosen small{color:#382514}
+#vip-reschedule-dialog .vip-reschedule-day:disabled{opacity:.32;cursor:not-allowed}
+#vip-reschedule-dialog .vip-reschedule-filter{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 14px}
+#vip-reschedule-dialog .vip-reschedule-filter button{appearance:none!important;border:1px solid #816445!important;border-radius:999px!important;background:#35271d!important;color:#e9cfac!important;padding:9px 15px!important;font:700 .75rem 'Manrope',sans-serif!important;cursor:pointer}
+#vip-reschedule-dialog .vip-reschedule-filter button.active{background:#e0b77f!important;color:#22170f!important;border-color:#f0d3a5!important}
+#vip-reschedule-dialog .vip-reschedule-slots{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:9px!important;max-height:300px!important;overflow:auto!important;margin:14px 0!important;background:transparent!important}
+#vip-reschedule-dialog button.vip-reschedule-slot{appearance:none!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:4px!important;min-width:0!important;min-height:60px!important;padding:10px 4px!important;border:1px solid #8a6547!important;border-radius:9px!important;background:#34261c!important;color:#f6dec1!important;box-shadow:none!important;text-decoration:none!important;cursor:pointer!important;opacity:1!important;text-align:center!important;transition:transform .15s,background .15s}
+#vip-reschedule-dialog button.vip-reschedule-slot strong{font-size:.95rem;font-variant-numeric:tabular-nums}
+#vip-reschedule-dialog button.vip-reschedule-slot small{font-size:.62rem;font-weight:500;color:#cab49b}
+#vip-reschedule-dialog button.vip-reschedule-slot:hover{background:#493422!important;transform:translateY(-1px)}
+#vip-reschedule-dialog button.vip-reschedule-slot.chosen{background:#e4be89!important;color:#26190f!important;border-color:#ffe1af!important;box-shadow:0 0 0 2px #d3ab6f45!important}
+#vip-reschedule-dialog button.vip-reschedule-slot.chosen small{color:#372719!important}
+#vip-reschedule-dialog .vip-reschedule-empty{grid-column:1/-1;color:#cbb496}
+#vip-reschedule-dialog .vip-reschedule-more{display:block;border:1px solid #a17b4d;border-radius:7px;background:transparent;color:#f1d5a9;padding:10px 14px;margin:0 auto 12px;cursor:pointer}
+#vip-reschedule-dialog .vip-reschedule-more[hidden]{display:none!important}
+#vip-reschedule-dialog .vip-reschedule-footer{position:sticky;bottom:-1px;z-index:2;background:#241a14;padding:14px 0 2px;border-top:1px solid #6e5239;box-shadow:0 -10px 24px #201813}
+#vip-reschedule-dialog .vip-reschedule-selected{font-size:.83rem;color:#f1d5a7!important;min-height:1.5em;margin:0 0 8px}
+#vip-reschedule-dialog .vip-review-actions{display:flex;gap:10px;margin-top:12px}
+#vip-reschedule-dialog .vip-review-actions button{min-height:43px;padding:11px 14px}
+#vip-reschedule-dialog .vip-review-actions #vip-reschedule-save{background:#e1b77c;color:#20150d}
+#vip-reschedule-dialog .vip-review-actions #vip-reschedule-save:disabled{opacity:.46}
+#vip-reschedule-dialog #vip-reschedule-hint{color:#dfc4a1!important;font-size:.79rem;line-height:1.5;min-height:1em}
+#vip-reschedule-dialog button:focus-visible,#vip-reschedule-dialog input:focus-visible,#vip-reschedule-dialog select:focus-visible{outline:2px solid #f4d5a1!important;outline-offset:2px}
+@media(max-width:540px){#vip-reschedule-dialog .vip-reschedule-day-rail{gap:3px}#vip-reschedule-dialog .vip-reschedule-day{min-height:64px;padding:7px 0!important}#vip-reschedule-dialog .vip-reschedule-day strong{font-size:1rem}#vip-reschedule-dialog .vip-reschedule-slots{grid-template-columns:repeat(3,minmax(0,1fr))!important}#vip-reschedule-dialog .vip-reschedule-label select{width:100%}#vip-reschedule-dialog .vip-reschedule-manual input{width:100%;max-width:none}#vip-reschedule-dialog .vip-review-actions{flex-direction:column-reverse}#vip-reschedule-dialog .vip-review-actions button{width:100%}}
+@media(prefers-reduced-motion:reduce){#vip-reschedule-dialog *{transition:none!important}}
+#vip-reschedule-dialog .vip-review-actions #vip-reschedule-close{background:#34251d!important;border:1px solid #94724c!important;color:#f3d9b6!important;cursor:pointer!important}
+#vip-reschedule-dialog .vip-review-actions #vip-reschedule-close:hover{background:#493423!important}
+
+/* V55: remarcação preserva a reserva original, mas não permite outra reserva no mesmo dia. */
+#vip-reschedule-dialog .vip-reschedule-day.is-reserved:disabled{opacity:.65;background:#34231d!important;border-color:#8e5a46!important}
+#vip-reschedule-dialog .vip-reschedule-day.is-reserved small{color:#ffb6a9;font-weight:700}

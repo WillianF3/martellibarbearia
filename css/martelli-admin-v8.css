@@ -1,0 +1,102 @@
+/* Barbearia Martelli V8 — identidade administrativa.
+   A camada apenas de apresentação é carregada em admin.php, painel.php e gestao.php.
+   Usa o preto/creme/dourado do logo Martelli, com assinatura tricolor italiana. */
+:root {
+ --c-admin-bg:#0d0f10; --c-admin-rail:#101112;
+ --c-admin-surface:#1b1a19; --c-admin-surface-2:#25211d;
+ --c-admin-border:#514638; --c-admin-text:#f5eee3;
+ --c-admin-muted:#c3b7a8; --c-admin-accent:#e7c794; --c-admin-soft:#f8e5c5;
+ --cab-sidebar-bg:#111110; --cab-sidebar-card:#1d1b19;
+ --cab-sidebar-line:#4c4031; --cab-sidebar-gold:#e7c794;
+ --cab-sidebar-text:#f4eee6; --v5-gold:#e7c794;
+ --v5-dark:#0c0d0d; --v5-deep:#151514;
+ --v5-stroke:rgba(231,199,148,.24);
+ --martelli-green:#266442;--martelli-cream:#f6e9ce;--martelli-red:#a93a3b;
+}
+body:has(.admin-shell),body:has(.biz-shell),body:has(.management-shell){background:var(--c-admin-bg);color:var(--c-admin-text)}
+.admin-shell,.biz-shell,.management-shell,
+.admin-content,.biz-shell .biz-main,.management-content{background:var(--c-admin-bg)!important;color:var(--c-admin-text)!important}
+/* Tricolor under the brand, restrained to avoid distracting from business data. */
+.cabra-unified-sidebar .cabra-sidebar-logo{
+ position:relative;padding:9px 15px 18px!important;margin-bottom:14px!important;
+ border-bottom:0!important;gap:4px!important;
+}
+.cabra-unified-sidebar .cabra-sidebar-logo::after{
+ content:"";position:absolute;bottom:0;left:16px;right:16px;height:3px;border-radius:4px;
+ background:linear-gradient(90deg,#20633c 0 32%,#f8ead0 32% 66%,#ab343a 66% 100%);
+}
+.cabra-unified-sidebar .cabra-sidebar-logo img{
+ width:178px!important;height:106px!important;max-width:100%!important;object-fit:contain;
+}
+.cabra-unified-sidebar .cabra-sidebar-logo span{color:var(--c-admin-accent)!important;letter-spacing:.17em!important}
+.cabra-unified-sidebar .cabra-nav-group{background:#1b1916!important;border-color:#4c4134!important}
+.cabra-unified-sidebar .cabra-nav-group:hover{border-color:#8b6c49!important}
+.cabra-unified-sidebar .cabra-nav-group .cabra-nav-group-toggle{color:var(--c-admin-accent)!important;border-bottom-color:#4d4235!important}
+.cabra-unified-sidebar .cabra-nav-group .cabra-nav-group-toggle:hover{background:#28221b!important;color:#f8e5c5!important}
+.cabra-unified-sidebar .cabra-nav-group a:hover,
+.cabra-unified-sidebar .cabra-nav-group button[data-tab]:hover{background:#30291e!important;border-color:#866a49!important;color:#fff1dc!important}
+.cabra-unified-sidebar .cabra-nav-group a.is-current,
+.cabra-unified-sidebar .cabra-nav-group button[data-tab].is-current{
+ color:#14110e!important;background:#e7c794!important;border-color:#e7c794!important;font-weight:800!important;
+ box-shadow:inset 3px 0 0 #316d4a!important;
+}
+.cabra-unified-sidebar .cabra-menu-search input{background:#121312!important;border-color:#66523b!important;color:#f4e9d7!important}
+.cabra-unified-sidebar .cabra-menu-search input:focus{border-color:var(--c-admin-accent)!important}
+.admin-heading,.biz-heading{border-bottom:1px solid #4f4233!important;padding-bottom:20px!important;margin-bottom:24px!important}
+.admin-heading h1,.biz-heading h1,.management-content h1,
+.admin-content .admin-section h2,.biz-shell .biz-panel h2,.management-section h2{
+ font-family:'DM Serif Display',Georgia,serif!important;font-weight:400!important;letter-spacing:.005em!important;text-transform:none!important;
+}
+.admin-heading h1,.biz-heading h1{font-size:clamp(2rem,3vw,2.9rem)!important}
+.admin-heading .eyebrow,.biz-eyebrow,.management-intro .eyebrow{color:var(--c-admin-accent)!important;letter-spacing:.15em!important}
+.admin-content .stat-card,.biz-shell .biz-card{
+ background:linear-gradient(155deg,#252019,#1a1918)!important;border:1px solid #5b4a37!important;
+ border-radius:11px!important;
+}
+.admin-content .admin-section,.biz-shell .biz-panel,.management-section{
+ background:#1b1b1b!important;border-color:#514638!important;border-radius:11px!important;
+}
+.admin-content .day-shortcut,.admin-content .agenda-section,.admin-content .day-shortcut-section{
+ background:linear-gradient(115deg,#29221b,#1b1b1b)!important;border-color:#7b6142!important;
+}
+.admin-content .data-table th,.admin-content .day-agenda-table th,.biz-shell .biz-table th{
+ background:#302820!important;color:#f5dfbd!important;
+}
+.admin-content .data-table td,.biz-shell .biz-table td{border-bottom-color:#483e34!important}
+.admin-content .button-gold,.biz-shell .biz-primary,#biz-dialog .biz-primary{
+ background:#e7c794!important;border-color:#e7c794!important;color:#1d1812!important;
+}
+.admin-content .button-gold:hover,.biz-shell .biz-primary:hover,#biz-dialog .biz-primary:hover{
+ background:#f6ddb5!important;border-color:#f6ddb5!important;
+}
+.admin-content input,.admin-content select,.admin-content textarea,
+.management-content input,.management-content select,.management-content textarea,
+.biz-shell input,.biz-shell select,.biz-shell textarea,#biz-dialog input,#biz-dialog select,#biz-dialog textarea{
+ background:#121313!important;border-color:#64513b!important;color:#f8ebd8!important;
+}
+.admin-content input:focus,.admin-content select:focus,.admin-content textarea:focus,
+.management-content input:focus,.management-content select:focus,.management-content textarea:focus,
+.biz-shell input:focus,.biz-shell select:focus,.biz-shell textarea:focus{
+ border-color:#e7c794!important;outline:2px solid #e7c79455!important;outline-offset:1px;
+}
+.biz-shell,.management-shell{font-family:Manrope,Arial,sans-serif}
+.biz-shell .biz-filter{background:#22201e!important;border-color:#584637!important}
+#biz-dialog{background:#1e1d1b!important;border-color:#877154!important;color:#f8ebda!important}
+.biz-shell .biz-tag.closed{background:#163d2a!important;color:#b5e4ca!important}
+.biz-shell .biz-tag.cancelled{background:#52252c!important;color:#f3bfc1!important}
+.biz-shell .biz-bar i:not(.negative){background:#47805d!important}
+.admin-sidebar .cabra-sidebar-bottom,.biz-sidebar .cabra-sidebar-bottom{padding-bottom:24px!important}
+.admin-shell a:focus-visible,.biz-shell a:focus-visible,.management-shell a:focus-visible,
+.admin-shell button:focus-visible,.biz-shell button:focus-visible,.management-shell button:focus-visible{
+ outline:2px solid var(--c-admin-accent)!important;outline-offset:3px;
+}
+/* O menu fixo permanece no desktop; mobile usa painel deslizante. */
+@media (min-width:960px){.admin-content,.biz-shell .biz-main,.management-content{max-width:none!important}}
+@media (max-width:959px){
+ .admin-content,.biz-shell .biz-main,.management-content{padding:20px 14px 48px!important}
+ .admin-heading,.biz-heading{gap:14px!important}
+ .cabra-unified-sidebar .cabra-sidebar-logo img{width:162px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .cabra-unified-sidebar .cabra-nav-group a,.cabra-unified-sidebar .cabra-nav-group button{transition:none!important;transform:none!important}
+}

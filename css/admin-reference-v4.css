@@ -1,0 +1,291 @@
+/* CABRA MACHO V4 — painel amplo inspirado na agenda anterior.
+   Visual somente: sem alterar rotas, formulários, bancos ou permissões. */
+:root {
+  --c-admin-bg:#0c0e10;
+  --c-admin-rail:#15120f;
+  --c-admin-surface:#241c16;
+  --c-admin-surface-2:#30231a;
+  --c-admin-border:#58422d;
+  --c-admin-text:#f6f3ef;
+  --c-admin-muted:#c2ae9c;
+  --c-admin-accent:#e0b574;
+  --c-admin-soft:#f2d3a1;
+}
+/* Remover a coluna fixa, ampliando a área útil como na referência. */
+.admin-shell,.biz-shell,.management-shell {
+  display:block!important;
+  width:100%;
+  min-width:0;
+  min-height:100vh;
+  background:var(--c-admin-bg)!important;
+  color:var(--c-admin-text);
+}
+.admin-content,.biz-shell .biz-main,.management-content {
+  width:100%!important;
+  max-width:1440px!important;
+  margin:0 auto;
+  padding:27px clamp(18px,2.5vw,36px) 54px!important;
+  background:var(--c-admin-bg)!important;
+}
+/* Sidebar acessível apenas ao abrir o menu — mantém todos os controles originais. */
+.admin-sidebar.cabra-unified-sidebar,
+.biz-sidebar.cabra-unified-sidebar,
+.management-sidebar.cabra-unified-sidebar {
+  position:fixed!important;
+  inset:0 auto 0 0;
+  z-index:1002;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  justify-content:flex-start!important;
+  gap:0!important;
+  width:min(310px,calc(100vw - 42px))!important;
+  height:100dvh!important;
+  max-height:100dvh!important;
+  padding:18px 16px 22px!important;
+  overflow-y:auto!important;
+  transform:translateX(-103%);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:transform .24s ease,opacity .22s ease,visibility .24s;
+  background:#15120f!important;
+  border:0!important;
+  border-right:1px solid #765737!important;
+  box-shadow:12px 0 42px #0008;
+}
+body.admin-drawer-open .admin-sidebar.cabra-unified-sidebar,
+body.admin-drawer-open .biz-sidebar.cabra-unified-sidebar,
+body.admin-drawer-open .management-sidebar.cabra-unified-sidebar {
+  transform:translateX(0);
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+/* Neutraliza as regras anteriores que ocultavam os links em celulares. */
+.admin-sidebar.cabra-unified-sidebar .cabra-nav,
+.biz-sidebar.cabra-unified-sidebar .cabra-nav,
+.management-sidebar.cabra-unified-sidebar .cabra-nav,
+.admin-sidebar .cabra-nav,.biz-sidebar .cabra-nav,.management-sidebar .cabra-nav {
+  display:grid!important;
+  gap:12px!important;
+  overflow:visible!important;
+  align-content:start;
+  width:100%;
+}
+.cabra-unified-sidebar .cabra-sidebar-logo {
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:7px!important;
+  margin:0 0 17px!important;
+  padding:0 0 18px!important;
+  border-bottom:1px solid #4c3928!important;
+  text-align:center!important;
+}
+.cabra-unified-sidebar .cabra-sidebar-logo img{width:103px!important;height:99px!important;max-width:100%!important;object-fit:contain}
+.cabra-unified-sidebar .cabra-sidebar-logo span{font-size:9px!important;max-width:none!important;text-align:center!important}
+.cabra-unified-sidebar .cabra-sidebar-bottom{display:grid!important;margin-top:auto!important;padding:18px 8px 3px!important;gap:10px!important}
+.cabra-unified-sidebar .cabra-nav-group{background:#211914;border-color:#503b2a}
+.cabra-unified-sidebar .cabra-nav-label{color:#eac187!important}
+.admin-drawer-close {
+  position:absolute!important;
+  top:12px;right:13px;
+  display:grid;place-items:center;
+  width:35px;height:35px;
+  padding:0!important;
+  border:1px solid #73563b!important;
+  border-radius:7px!important;
+  background:#221912!important;
+  color:#f2dbbb!important;
+  font-size:24px!important;
+  line-height:1;
+  cursor:pointer;
+}
+.admin-drawer-backdrop {
+  display:block;
+  position:fixed;
+  inset:0;
+  z-index:1001;
+  border:0;
+  background:rgba(0,0,0,.72);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .22s ease,visibility .22s;
+}
+body.admin-drawer-open .admin-drawer-backdrop{opacity:1;visibility:visible;pointer-events:auto}
+body.admin-drawer-open{overflow:hidden}
+/* Barra principal da agenda, como na segunda imagem. */
+.admin-heading,.biz-heading {
+  display:flex!important;
+  justify-content:space-between;
+  align-items:flex-start!important;
+  flex-direction:row!important;
+  flex-wrap:wrap;
+  gap:14px 20px!important;
+  padding:0!important;
+  margin:0 0 26px!important;
+  border:none!important;
+}
+.admin-heading .eyebrow,.biz-eyebrow,.management-intro .eyebrow {
+  font:800 11px/1.4 Manrope,Arial,sans-serif!important;
+  color:#f0efe9!important;
+  letter-spacing:.18em!important;
+}
+.admin-heading h1,.biz-heading h1,.management-content h1 {
+  margin:5px 0 0!important;
+  font-family:'Barlow Condensed',Impact,sans-serif;
+  font-size:clamp(39px,4.3vw,52px)!important;
+  font-weight:900!important;
+  letter-spacing:0!important;
+  line-height:.98!important;
+  text-transform:uppercase;
+  color:#fafafa!important;
+}
+.admin-actions,.biz-heading-actions {
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end;
+  gap:12px!important;
+  flex-wrap:wrap;
+  margin-top:6px;
+}
+.admin-actions>span,.biz-heading-actions span {font-size:12px!important;color:#d5c3b6!important}
+.admin-menu-trigger {
+  display:inline-flex!important;
+  align-items:center;justify-content:center;
+  flex:none;
+  gap:9px;
+  min-height:45px;
+  padding:11px 16px!important;
+  border:1px solid #b38b5a!important;
+  border-radius:3px!important;
+  background:#171412!important;
+  color:#f1c990!important;
+  font:800 11px/1.3 Manrope,Arial,sans-serif!important;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  text-decoration:none;
+  cursor:pointer;
+}
+.admin-menu-trigger:hover{background:#2a2019!important;border-color:#e3b876!important;color:#fff!important}
+.admin-menu-trigger svg{width:17px;height:17px;flex:none}
+.admin-actions .button-outline,.biz-heading-actions a {
+  display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid #aaa8a5!important;
+  border-radius:2px!important;
+  background:transparent!important;
+  color:#fff!important;
+  min-height:47px;
+  padding:12px 18px;
+  font-size:11px;
+  font-weight:800;
+}
+.admin-actions #new-booking {
+  min-height:47px;
+  background:#f1f1f1!important;
+  border-color:#f1f1f1!important;
+  color:#101114!important;
+  border-radius:2px!important;
+  font-weight:900;
+}
+.admin-actions #new-booking:hover{background:#fff!important;transform:translateY(-1px)}
+/* Elementos-chave da agenda: cartões pequenos, destaque marrom, área de dados grafite. */
+.admin-content .stats-grid{gap:13px;margin-bottom:29px}
+.admin-content .stat-card,.admin-content .stats-grid>*{
+  background:#251e18!important;
+  border:1px solid #60482f!important;
+  border-radius:8px!important;
+  box-shadow:none!important;
+}
+.admin-content .stat-card{min-height:159px;padding:21px!important}
+.admin-content .stat-card strong,.admin-content .stat-card .stat-number{color:#fff!important}
+.admin-content .stat-card span{color:#c8afa0!important}
+.admin-content .stat-card h3,.admin-content .stat-card .stat-label{color:#e8b775!important}
+.admin-content .day-shortcut,.admin-content .day-shortcut-section {
+  background:linear-gradient(110deg,#2c2017,#1d1713)!important;
+  border:1px solid #866039!important;
+  border-radius:10px!important;
+  box-shadow:none!important;
+}
+.admin-content .day-shortcut {padding:23px 24px;margin-bottom:24px!important;min-height:197px}
+.admin-content .day-shortcut>div:first-child{align-self:center}
+.admin-content .day-shortcut strong{color:#fff!important}
+.admin-content .day-shortcut-actions .day-shortcut-open,
+.admin-content .day-shortcut-open {
+  background:#f1f1f1!important;
+  border-color:#f1f1f1!important;
+  color:#121110!important;
+  border-radius:3px!important;
+}
+.admin-content .admin-section,.admin-content .agenda-section {
+  background:#151719!important;
+  border:1px solid #424344!important;
+  border-radius:7px!important;
+  box-shadow:none!important;
+  margin-bottom:24px;
+}
+.admin-content .admin-section{padding:25px!important}
+.admin-content .agenda-section .toolbar,.admin-content .agenda-section-head{gap:12px}
+.admin-content .agenda-section h2,.admin-content .admin-section h2{color:#fff!important}
+.admin-content .data-table th,.admin-content .day-agenda-table th{background:#322820!important;color:#fff0dc!important}
+.admin-content .data-table td,.admin-content .data-table th{border-color:#554336!important}
+.admin-content .table-scroll {border-color:#4a433d!important;border-radius:6px!important}
+.admin-content .day-shortcut-arrow {background:#1b1510;border-color:#a47b45!important}
+.admin-content .admin-mobile-jump{display:none!important}
+/* O painel de gestão também ganha a área ampla e os mesmos tons da agenda. */
+.biz-shell .biz-card {background:#241d17!important;border-color:#60482f!important;box-shadow:none!important;border-radius:8px!important}
+.biz-shell .biz-panel {background:#151719!important;border-color:#454443!important;box-shadow:none!important;border-radius:8px!important}
+.biz-shell .biz-filter {background:#251e18!important;border-color:#60482f!important}
+.biz-shell .biz-table th {background:#332920!important;color:#f2ddbf!important}
+.biz-shell .biz-heading h1 {font-size:clamp(39px,4.3vw,52px)!important}
+.biz-shell .biz-mobile{display:none!important}
+.biz-shell .biz-heading-actions{margin-top:4px}
+.biz-shell .biz-heading-actions a{color:#fff!important;text-decoration:none!important}
+.biz-shell .biz-shell a {color:#e8c38d}
+/* Gestão auxiliar: mesma largura, cabeçalho limpo, seções com hierarquia clara. */
+.management-top-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:25px}
+.management-top-actions .management-back{margin:0}
+.management-content .management-section{background:#151719!important;border:1px solid #454443!important;border-radius:8px!important;box-shadow:none!important}
+.management-content .management-intro{border-bottom-color:#56442e!important}
+.management-content .management-intro h1{text-transform:uppercase}
+.management-content .management-section h2{color:#fff!important}
+/* Controles e estados de foco visíveis. */
+.admin-content input,.admin-content select,.admin-content textarea,.biz-shell input,.biz-shell select,.biz-shell textarea,.management-content input,.management-content select,.management-content textarea {
+  background:#15110e!important;border:1px solid #766044!important;color:#fff!important;
+}
+.admin-content input:focus-visible,.admin-content select:focus-visible,.admin-content textarea:focus-visible,.biz-shell input:focus-visible,.biz-shell select:focus-visible,.management-content input:focus-visible,.management-content select:focus-visible {
+  outline:2px solid #e7bf84!important;outline-offset:2px;
+}
+@media (max-width:860px) {
+  .admin-content,.biz-shell .biz-main,.management-content{padding:22px 18px 42px!important}
+  .admin-heading,.biz-heading{align-items:flex-start!important}
+  .admin-actions,.biz-heading-actions{justify-content:flex-start;width:100%}
+  .admin-content .stats-grid,.biz-shell .biz-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .admin-content .day-shortcut{min-height:auto}
+}
+@media (max-width:580px) {
+  .admin-content,.biz-shell .biz-main,.management-content{padding:20px 14px 38px!important}
+  .admin-heading h1,.biz-heading h1,.management-content h1{font-size:39px!important}
+  .admin-actions,.biz-heading-actions{gap:9px!important}
+  .admin-actions>span,.biz-heading-actions span{display:none!important}
+  .admin-actions .button,.admin-actions #new-booking{min-height:41px;padding:9px 11px!important;font-size:10px!important;flex:1}
+  .admin-menu-trigger{min-height:41px;padding:9px 12px!important}
+  .admin-content .stat-card{min-height:132px;padding:15px!important}
+  .admin-content .stats-grid{gap:10px}
+  .admin-content .day-shortcut{padding:17px!important}
+  .admin-content .admin-section{padding:16px!important}
+  .management-top-actions{flex-wrap:wrap}
+  .management-section .modal-fields{grid-template-columns:1fr!important}
+  .biz-shell .biz-filter label{min-width:126px}
+}
+@media (prefers-reduced-motion:reduce){
+  .cabra-unified-sidebar,.admin-drawer-backdrop{transition:none!important}
+}
+@media print{
+ .cabra-unified-sidebar,.admin-drawer-backdrop,.admin-menu-trigger{display:none!important}
+ .admin-shell,.biz-shell,.management-shell{background:#fff!important}
+ .admin-content,.biz-shell .biz-main,.management-content{padding:0!important}
+}

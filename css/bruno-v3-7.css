@@ -1,0 +1,29 @@
+/* Martelli V3.7 — painel compacto e combos */
+.day-shortcut {gap:14px;}
+.day-shortcut-actions {gap:9px;flex:0 1 auto;align-items:end;justify-content:flex-end;}
+.day-shortcut-actions label {flex:0 1 180px;min-width:140px;}
+.day-shortcut-actions .day-shortcut-open {
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  flex:0 0 auto;width:auto!important;max-width:158px;min-width:126px;min-height:42px;
+  padding:9px 12px!important;font-size:10px;line-height:1.35;
+  text-align:center;letter-spacing:.055em;white-space:normal;border-radius:5px;
+}
+.day-shortcut-actions .day-shortcut-open:hover{transform:translateY(-1px);}
+.booking-combo-hint{font-size:12px;line-height:1.65;color:var(--muted,#ab9b89);margin:-8px 0 18px;}
+#choose-service .option{position:relative;min-width:0;}
+#choose-service .option-combo{background:linear-gradient(135deg,#221a13,#15110e);border-color:#8b6c42;}
+#choose-service .option-combo:hover{border-color:#e4c58c;}
+#choose-service .option-combo.selected{background:#44301a;border-color:#d5af72;}
+#choose-service .option-combo strong{padding-right:6px;line-height:1.35;}
+#choose-service .combo-chip{display:inline-block;width:max-content;color:#d8b778;border:1px solid #6c5333;border-radius:4px;font-weight:700;font-size:9px;letter-spacing:.11em;line-height:1.2;padding:3px 6px;margin:7px 0 5px;}
+#choose-service .option-combo>span:last-child{display:block;font-size:12px;}
+@media(max-width:760px){
+ .day-shortcut-actions {justify-content:flex-start;align-items:end;gap:10px;}
+ .day-shortcut-actions label{flex:1 1 140px;min-width:0;}
+ .day-shortcut-actions .day-shortcut-open{flex:0 1 142px;max-width:145px;min-width:116px;min-height:44px;padding:8px 9px!important;font-size:9.5px;}
+}
+@media(max-width:380px){
+ .day-shortcut-actions .day-shortcut-open{width:auto!important;flex:0 1 125px;max-width:125px;min-width:112px;}
+ .day-shortcut-actions label {flex:1 1 130px;}
+}
+@media(prefers-reduced-motion:reduce){.day-shortcut-actions .day-shortcut-open{transition:none;}}

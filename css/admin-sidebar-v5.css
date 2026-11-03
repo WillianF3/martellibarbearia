@@ -1,0 +1,217 @@
+/* CABRA MACHO V5 — navegação fixa e interativa.
+ * Camada somente de apresentação sobre a V4; não modifica agendamentos, APIs ou permissões.
+ */
+:root {
+  --cab-sidebar-size: 274px;
+  --cab-sidebar-bg: #17120f;
+  --cab-sidebar-card: #231a14;
+  --cab-sidebar-line: #503925;
+  --cab-sidebar-gold: #e2b676;
+  --cab-sidebar-text: #f5eadc;
+}
+/* A navegação fixa tem rolagem independente e permanece na mesma posição.
+ * O espaço de leitura pertence ao conteúdo, que nunca fica sobreposto à barra. */
+@media (min-width: 960px) {
+  .admin-shell,.biz-shell,.management-shell { display:block!important;min-height:100vh; }
+  .admin-sidebar.cabra-unified-sidebar,
+  .biz-sidebar.cabra-unified-sidebar,
+  .management-sidebar.cabra-unified-sidebar {
+    position:fixed!important;
+    inset:0 auto 0 0!important;
+    display:flex!important;
+    width:var(--cab-sidebar-size)!important;
+    min-width:var(--cab-sidebar-size)!important;
+    max-width:var(--cab-sidebar-size)!important;
+    height:100vh!important;
+    height:100dvh!important;
+    max-height:100dvh!important;
+    z-index:60!important;
+    transform:none!important;
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    box-shadow:4px 0 22px #0002!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    overscroll-behavior:contain;
+    padding:21px 13px 20px!important;
+    background:var(--cab-sidebar-bg)!important;
+    border-right:1px solid var(--cab-sidebar-line)!important;
+  }
+  .admin-content,.biz-shell .biz-main,.management-content {
+    width:calc(100% - var(--cab-sidebar-size))!important;
+    max-width:none!important;
+    margin:0 0 0 var(--cab-sidebar-size)!important;
+    min-width:0;
+    padding:27px clamp(18px,2.4vw,42px) 52px!important;
+  }
+  .admin-menu-trigger,.admin-drawer-close,.admin-drawer-backdrop {display:none!important;}
+  body.admin-drawer-open {overflow:auto!important;}
+}
+@media (min-width:960px) and (max-width:1199px){
+  :root{--cab-sidebar-size:248px;}
+  .admin-content,.biz-shell .biz-main,.management-content{padding-inline:19px!important}
+}
+/* Menu em cartões, cabeçalhos clicáveis, pesquisa e indicação contextual. */
+.admin-sidebar.cabra-unified-sidebar,
+.biz-sidebar.cabra-unified-sidebar,
+.management-sidebar.cabra-unified-sidebar{
+  scrollbar-width:thin;
+  scrollbar-color:#85613e transparent;
+  background:var(--cab-sidebar-bg)!important;
+}
+.cabra-unified-sidebar .cabra-sidebar-logo {padding:0 28px 16px!important;margin-bottom:15px!important;}
+.cabra-unified-sidebar .cabra-sidebar-logo img{height:88px!important;width:98px!important;object-fit:contain;}
+.cabra-unified-sidebar .cabra-sidebar-logo span{font-size:9px!important;letter-spacing:.17em!important}
+.cabra-unified-sidebar .cabra-nav{display:grid!important;gap:11px!important;width:100%!important;align-content:start;}
+.cabra-unified-sidebar .cabra-nav-group {
+  display:grid!important;
+  align-content:start;
+  min-width:0;
+  gap:0!important;
+  padding:7px!important;
+  border:1px solid var(--cab-sidebar-line)!important;
+  border-radius:10px!important;
+  background:var(--cab-sidebar-card)!important;
+  transition:border-color .16s, background .16s;
+}
+.cabra-unified-sidebar .cabra-nav-group:hover{border-color:#79583a!important;}
+.cabra-unified-sidebar .cabra-nav-group[hidden],
+.cabra-unified-sidebar .cabra-nav-group-items[hidden],
+.cabra-unified-sidebar .cabra-nav-group-items > [hidden],
+.cabra-unified-sidebar .cabra-nav-empty[hidden] {display:none!important;}
+.cabra-nav-group-items{display:grid;gap:3px;min-width:0;}
+.cabra-unified-sidebar .cabra-nav-label {margin:0 4px 4px!important;}
+/* Botão do grupo substitui progressivamente o rótulo estático via JavaScript. */
+.cabra-unified-sidebar .cabra-nav-group .cabra-nav-group-toggle {
+  display:flex!important;
+  align-items:center;
+  justify-content:space-between;
+  gap:9px;
+  width:100%;
+  min-height:37px;
+  padding:9px 8px!important;
+  margin:0 0 5px!important;
+  border:0!important;
+  border-bottom:1px solid #5f462d!important;
+  border-radius:4px 4px 0 0!important;
+  background:transparent!important;
+  color:var(--cab-sidebar-gold)!important;
+  font:800 10px/1.4 Manrope,Arial,sans-serif!important;
+  letter-spacing:.065em!important;
+  text-transform:uppercase!important;
+  text-align:left!important;
+  cursor:pointer;
+}
+.cabra-nav-group-toggle::after {content:'';width:7px;height:7px;flex:none;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .18s;}
+.cabra-nav-group-toggle[aria-expanded="false"]::after{transform:translateY(2px) rotate(-45deg);}
+.cabra-unified-sidebar .cabra-nav-group .cabra-nav-group-toggle:hover{background:#372719!important;color:#ffdfaa!important;}
+.cabra-unified-sidebar .cabra-nav-group a,
+.cabra-unified-sidebar .cabra-nav-group button[data-tab] {
+  position:relative;
+  display:flex!important;
+  align-items:center;
+  min-height:39px;
+  padding:10px 11px!important;
+  border:1px solid transparent!important;
+  border-radius:7px!important;
+  color:var(--cab-sidebar-text)!important;
+  line-height:1.4!important;
+  transition:background .16s ease,border-color .16s ease,color .16s ease,transform .16s ease;
+}
+.cabra-unified-sidebar .cabra-nav-group a:hover,
+.cabra-unified-sidebar .cabra-nav-group button[data-tab]:hover{
+  background:#39291d!important;
+  border-color:#6f4d2e!important;
+  color:#ffe0ae!important;
+  transform:translateX(2px);
+}
+.cabra-unified-sidebar .cabra-nav-group a.is-current,
+.cabra-unified-sidebar .cabra-nav-group button[data-tab].is-current,
+.cabra-unified-sidebar .cabra-nav-group a.active,
+.cabra-unified-sidebar .cabra-nav-group button[data-tab].active{
+  background:#4c3523!important;
+  border-color:#a17849!important;
+  color:#ffe3af!important;
+  font-weight:800!important;
+  box-shadow:inset 3px 0 0 var(--cab-sidebar-gold);
+}
+.cabra-unified-sidebar :is(a,button,input):focus-visible{
+  outline:2px solid #f3cb8d!important;
+  outline-offset:2px!important;
+}
+.cabra-menu-search{display:grid!important;gap:6px;width:100%;margin:0 0 14px!important;font:800 9px/1.4 Manrope,Arial,sans-serif!important;letter-spacing:.09em;color:#d5aa73!important;text-transform:uppercase;}
+.cabra-menu-search input{
+  width:100%;min-width:0;height:40px;padding:9px 11px!important;
+  background:#0e0e0d!important;border:1px solid #664b32!important;border-radius:7px!important;
+  color:#fff1e2!important;font:600 12px Manrope,Arial,sans-serif!important;
+  letter-spacing:0!important;text-transform:none!important;
+  outline-offset:2px;
+}
+.cabra-menu-search input::placeholder{color:#a58e79;opacity:1;}
+.cabra-nav-empty{color:#cfb89f;padding:12px 8px;font-size:12px;line-height:1.5;}
+.cabra-unified-sidebar .cabra-sidebar-bottom {margin-top:auto!important;}
+.cabra-unified-sidebar .cabra-sidebar-bottom .cabra-site-link{padding:6px 2px;}
+/* Efeitos suaves somente onde são úteis, sem animar dados ou tabelas. */
+.admin-content .stat-card,.biz-shell .biz-card{
+  transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease;
+}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+  .admin-content .stat-card:hover,.biz-shell .biz-card:hover{
+    border-color:#9b7347!important;transform:translateY(-2px);
+    box-shadow:0 8px 26px #0003!important;
+  }
+}
+/* Em celulares e tablets: menu com abertura, fechamento e fundo escurecido.
+ * Mantém o menu sempre acessível sem ocupar a área da agenda. */
+@media (max-width:959px){
+  .admin-shell,.biz-shell,.management-shell{display:block!important;}
+  .admin-content,.biz-shell .biz-main,.management-content{
+    width:100%!important;max-width:none!important;margin:0 auto!important;
+  }
+  .admin-sidebar.cabra-unified-sidebar,
+  .biz-sidebar.cabra-unified-sidebar,
+  .management-sidebar.cabra-unified-sidebar {
+    display:flex!important;
+    flex-direction:column!important;
+    position:fixed!important;
+    inset:0 auto 0 0!important;
+    z-index:1002!important;
+    width:min(310px,calc(100vw - 40px))!important;
+    min-width:0!important;
+    max-width:310px!important;
+    height:100vh!important;height:100dvh!important;max-height:100dvh!important;
+    overflow:auto!important;
+    padding:18px 15px 23px!important;
+    transform:translateX(-103%)!important;
+    opacity:0!important;visibility:hidden!important;pointer-events:none!important;
+    background:var(--cab-sidebar-bg)!important;border-right:1px solid #775536!important;
+    box-shadow:12px 0 45px #0008!important;
+    transition:transform .23s ease,opacity .23s ease,visibility .23s ease!important;
+  }
+  body.admin-drawer-open .admin-sidebar.cabra-unified-sidebar,
+  body.admin-drawer-open .biz-sidebar.cabra-unified-sidebar,
+  body.admin-drawer-open .management-sidebar.cabra-unified-sidebar{
+    transform:translateX(0)!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important;
+  }
+  .admin-drawer-close{display:grid!important;z-index:2;}
+  .admin-menu-trigger{display:inline-flex!important;}
+  .admin-drawer-backdrop{display:block!important;}
+  .cabra-unified-sidebar .cabra-sidebar-logo{padding:0 20px 13px!important;margin:0 0 13px!important;}
+  .cabra-unified-sidebar .cabra-nav{display:grid!important;}
+  body.admin-drawer-open{overflow:hidden!important;}
+}
+@media (max-width:580px){
+  .admin-heading,.biz-heading {gap:14px!important;}
+  .admin-menu-trigger{font-size:11px!important;min-width:78px;}
+}
+@media (prefers-reduced-motion:reduce){
+  .cabra-unified-sidebar .cabra-nav-group a,.cabra-unified-sidebar .cabra-nav-group button,
+  .cabra-unified-sidebar .cabra-nav-group,.admin-content .stat-card,.biz-shell .biz-card,
+  .cabra-nav-group-toggle::after {transition:none!important;transform:none!important;}
+}
+@media print{
+  .admin-sidebar.cabra-unified-sidebar,.biz-sidebar.cabra-unified-sidebar,.management-sidebar.cabra-unified-sidebar,
+  .admin-menu-trigger,.admin-drawer-backdrop{display:none!important;}
+  .admin-content,.biz-shell .biz-main,.management-content {margin:0!important;width:100%!important;padding:0!important;}
+}

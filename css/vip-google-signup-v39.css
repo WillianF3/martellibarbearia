@@ -1,0 +1,13 @@
+/* Cadastro Google V39: verificacao opcional antes da aprovacao VIP. */
+.vip-google-signup-button{margin:16px 0 8px;max-width:100%}
+.vip-google-signup-connected{display:flex;align-items:center;gap:14px;padding:15px 18px;border:1px solid #4d8668;background:#19362a;border-radius:10px;margin:16px 0 10px;color:#def8e5;font:600 13px 'Manrope',sans-serif}
+.vip-google-signup-connected strong,.vip-google-signup-connected small{display:block;overflow-wrap:anywhere}
+.vip-google-signup-connected small{font-size:12px;opacity:.85;font-weight:400;margin-top:4px}
+.vip-google-signup-switch{display:inline-block;color:#eacb97;text-decoration:underline;margin:4px 0 18px;font-size:12px}
+.vip-google-signup-warning{border:1px solid #a25e54;background:#49241f;color:#ffe0d6;padding:14px;border-radius:8px;margin:15px 0;line-height:1.5}
+.vip-join input[readonly]{background:#22201a;border-color:#488465;color:#d7eddd}
+.vip-login-google-register{margin-top:12px;border-top:1px solid #67513a;padding-top:15px}
+.vip-login-google-register a{color:#f2d199;font-weight:750}
+@media(max-width:570px){.vip-google-signup-connected{align-items:flex-start}}
+
+.vip-google-request{color:#91ddb3!important;font-weight:700;margin-top:6px!important}

@@ -1,0 +1,27 @@
+/* BRUNO V3.4 — navegação entre etapas e atalhos sociais */
+#booking-service-panel,#booking-barber-panel,.booking-date-panel,.booking-slots-heading,#booking-client-panel,#booking-time-picker{
+  scroll-margin-top:clamp(100px,14vh,130px);
+}
+#booking-service-panel .option.selected,#booking-barber-panel .option.selected{box-shadow:inset 0 0 0 1px #e2bb7b,0 0 0 1px #ad7d40;}
+#booking-service-panel .option:active,#booking-barber-panel .option:active{transform:scale(.995)}
+.martelli-social-float{position:fixed;z-index:80;right:18px;bottom:25px;display:flex;flex-direction:column;gap:11px;align-items:center;isolation:isolate;}
+.martelli-social-button{display:grid;place-items:center;width:53px;height:53px;border-radius:15px;color:#fff;border:1px solid #ffffff45;box-shadow:0 12px 28px #0009;transition:transform .22s ease,box-shadow .22s ease;}
+.martelli-social-button svg{width:27px;height:27px;}
+.martelli-social-whatsapp{background:#168e59;}
+.martelli-social-instagram{background:linear-gradient(145deg,#5b45ce,#af2a9f 50%,#f2734c);}
+.martelli-social-button:hover,.martelli-social-button:focus-visible{transform:translateY(-3px) scale(1.04);box-shadow:0 16px 31px #000b;outline:2px solid #e4c587;outline-offset:3px;}
+@media(max-width:760px){
+  .martelli-social-float{right:12px;bottom:max(20px,env(safe-area-inset-bottom));gap:10px;}
+  .martelli-social-button{width:49px;height:49px;border-radius:14px;}
+  .martelli-social-button svg{width:25px;height:25px;}
+  /* Não ocupar a área inferior sobre o resumo quando o cliente estiver preenchendo a reserva. */
+  body:has(#booking-form) .martelli-social-float{bottom:max(16px,env(safe-area-inset-bottom));}
+}
+/* Elimina efeitos simultâneos que escondiam e reexibiam a home na primeira pintura. */
+.hero-bruno-v3 .hero-content,
+.hero-bruno-v3 .hero-content>* ,
+.hero-bruno-v3 .hero-photo{animation:none!important;}
+.js-enhanced .hero-bruno-v3 .hero-content,
+.js-enhanced .hero-bruno-v3 .hero-content>*{opacity:1!important;filter:none!important;}
+.hero-bruno-v3 .hero-photo{transform:scale(1.035);transition:none!important;}
+@media (prefers-reduced-motion:reduce){.martelli-social-button{transition:none!important;}}
