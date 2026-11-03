@@ -1,0 +1,4 @@
+/* Ações de acesso do Martelli VIP */
+.vip-v47-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:flex-end}
+.vip-login-cta-outline{background:transparent!important;border:1px solid #b58d57!important;color:#eed1a5!important}
+@media(max-width:740px){.vip-v47-actions{justify-content:stretch;width:100%}.vip-v47-actions a{flex:1;text-align:center}}

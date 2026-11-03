@@ -1,0 +1,7 @@
+
+.vip-apple-button{display:flex;justify-content:center;align-items:center;gap:10px;text-align:center;text-decoration:none;font-size:14px;font-weight:700;background:#111;color:#fff;border:1px solid #d8bf95;border-radius:7px;padding:13px 15px;margin:10px 0 12px;transition:transform .18s,border-color .18s}
+.vip-apple-button:hover,.vip-apple-button:focus-visible{transform:translateY(-1px);border-color:#eac98f;background:#232323;color:#fff}
+.vip-login-panel .vip-apple-button{width:100%}
+
+/* V41 — Comunicação honesta quando o provedor ainda não está configurado. */
+.vip-social-setup {background:#30231e;border:1px solid #806342;color:#f0d7b6;border-radius:8px;padding:10px 12px;font-size:.9rem;line-height:1.5;}

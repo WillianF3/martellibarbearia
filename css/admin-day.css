@@ -1,0 +1,148 @@
+/* Martelli V6.2 — Gestão de todos os agendamentos de um dia. */
+.day-shortcut{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;margin:0 0 24px;border:1px solid #80603c;border-radius:11px;padding:21px 24px;background:linear-gradient(120deg,#2c2117,#1b1510);box-shadow:0 8px 24px #0002}
+.day-shortcut>div:first-child{flex:1;min-width:200px}.day-shortcut strong{display:block;font-family:var(--display,Georgia,serif);font-size:clamp(1.3rem,2vw,1.75rem);font-weight:400;color:#f6e7d5}.day-shortcut p{margin:5px 0 0;color:#beaf9b;font-size:13px;line-height:1.5}
+.day-shortcut-actions{display:flex;align-items:end;gap:10px;flex-wrap:wrap}.day-shortcut-actions label{margin:0;font-size:11px;color:#d6b783}.day-shortcut-actions input{display:block;margin-top:6px;min-height:44px;width:178px;background:#17110d;color:#f7ead8;border:1px solid #83684b;border-radius:6px}.day-shortcut-actions .button{min-height:44px}
+.day-panel{max-width:1200px;padding:clamp(18px,3vw,30px)}.day-panel-head{display:flex;justify-content:space-between;align-items:start;gap:16px;flex-wrap:wrap}.day-panel-head h2{font-size:clamp(1.65rem,3vw,2.25rem);margin:7px 0 8px}.day-panel-head p{margin:0;max-width:660px;font-size:13px}.day-panel-head button{flex-shrink:0}
+.day-picker-row{display:flex;align-items:end;gap:11px;flex-wrap:wrap;margin:25px 0 28px;border:1px solid #483725;background:#16120f;padding:17px;border-radius:9px}.day-picker-row label{margin:0;flex:1;min-width:180px;max-width:350px;font-size:11px;color:#e7c68f}.day-picker-row label input{display:block;width:100%;margin-top:6px;min-height:46px;background:#201711;border:1px solid #80664b;border-radius:6px;color-scheme:dark}.day-picker-row .button{min-height:46px;padding:12px 18px}.day-chevron{appearance:none;background:#302217;color:#f4d49a;border:1px solid #85653f;border-radius:6px;font-size:31px;line-height:1;min-height:46px;width:46px;display:grid;place-items:center;cursor:pointer}.day-chevron:hover{background:#503720}.day-chevron:focus-visible,.day-inline-link:focus-visible{outline:2px solid #e9c888;outline-offset:2px}
+.day-overview{display:flex;align-items:end;justify-content:space-between;gap:18px;flex-wrap:wrap}.day-overview>div{min-width:200px}.day-overview h3{font-size:clamp(1.55rem,2.8vw,2.25rem);text-transform:capitalize;margin:6px 0 5px}.day-overview p{font-size:13px;margin:0}.day-overview label{font-size:11px;color:#e1c28c;margin:0;min-width:195px}.day-overview select{margin-top:6px;min-height:44px;background:#17120e;border:1px solid #725a3e;color:#f6e9d9}
+.day-totals{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:23px 0 30px}.day-totals>div{background:#16110e;border:1px solid #55402b;border-radius:8px;padding:16px;min-width:0}.day-totals strong{display:block;font-family:var(--display,Georgia,serif);font-size:clamp(1.35rem,2.5vw,2rem);font-weight:400;line-height:1.15;color:#d9b071;overflow-wrap:anywhere}.day-totals span{display:block;margin-top:6px;font-size:11px;color:#c8b5a0;line-height:1.3}
+.day-list-title{font-size:clamp(1.4rem,2.5vw,1.75rem);margin:0 0 15px}.day-appointments{display:grid;gap:12px}.day-entry{display:grid;grid-template-columns:82px minmax(0,1fr) 130px minmax(160px,210px);gap:17px;align-items:center;border:1px solid #58422f;background:linear-gradient(130deg,#211914,#17120f);border-radius:9px;padding:18px}.day-time{align-self:start;border-right:1px solid #4d3a2b;padding-right:12px}.day-time strong{display:block;font:clamp(1.5rem,2vw,1.85rem)/1.1 var(--display,Georgia,serif);color:#efd1a1}.day-time small{display:block;margin-top:6px;color:#ae9680;font-size:11px}.day-client{min-width:0}.day-client h4{font:700 clamp(1rem,2vw,1.2rem)/1.35 var(--font,Arial,sans-serif);margin:0 0 4px;color:#fff2df;overflow-wrap:anywhere}.day-client p{margin:0 0 8px;font-size:12px;color:#c9b396;overflow-wrap:anywhere}.day-client>span{display:block;font-size:12px;color:#e7d2af;line-height:1.55}.day-client .day-notes{color:#b2a18d}.day-client .day-notes:empty{display:none}.day-state{display:flex;flex-direction:column;align-items:flex-start;gap:11px}.day-state strong{color:#eed0a0;font-size:14px}.day-entry-actions .appointment-actions{display:flex;justify-content:flex-end;gap:7px}.day-entry-actions .appointment-action{margin:0}.day-entry-actions>.text-muted{display:block;text-align:right;font-size:12px}
+.day-empty{text-align:center;border:1px dashed #776045;border-radius:9px;padding:45px 22px;background:#15110e}.day-empty strong{font-size:1.1rem;color:#ebd2ad}.day-empty p{color:#bca78e;font-size:13px;margin:8px 0 0}
+.day-inline-link{background:transparent!important;border:0!important;text-decoration:underline;text-underline-offset:3px;color:#dfb978!important;padding:3px 0!important;font-size:11px!important;cursor:pointer}.day-inline-link:hover{color:#f3daa9!important}
+@media(max-width:1120px){.day-entry{grid-template-columns:76px minmax(0,1fr) 120px}.day-entry-actions{grid-column:2/-1}.day-entry-actions .appointment-actions{justify-content:flex-start}.day-entry-actions>.text-muted{text-align:left}}
+@media(max-width:760px){.day-shortcut{padding:17px;align-items:stretch}.day-shortcut-actions{width:100%}.day-shortcut-actions label{flex:1}.day-shortcut-actions input{width:100%}.day-shortcut-actions .button{flex:1}.day-picker-row{padding:12px;gap:8px}.day-picker-row label{flex:1 1 calc(100% - 112px);min-width:0}.day-picker-row>.button{width:100%}.day-totals{grid-template-columns:repeat(2,minmax(0,1fr))}.day-totals>div:last-child{grid-column:1/-1}.day-entry{grid-template-columns:75px minmax(0,1fr);gap:12px;padding:15px}.day-state{grid-column:1/-1;flex-direction:row;justify-content:space-between;align-items:center;border-top:1px solid #493728;padding-top:11px}.day-entry-actions{grid-column:1/-1}.day-entry-actions .appointment-actions{justify-content:flex-start;flex-wrap:wrap}.day-client h4{font-size:1.07rem}}
+@media(max-width:380px){.day-shortcut-actions .button{width:100%}.day-entry{grid-template-columns:65px minmax(0,1fr)}.day-time strong{font-size:1.35rem}.day-chevron{width:40px}.day-picker-row label{flex-basis:calc(100% - 100px)}}
+@media(prefers-reduced-motion:reduce){.day-chevron,.day-inline-link{scroll-behavior:auto}}
+
+
+/* V3.5 — remarcação de agendamentos no desktop e no celular */
+.appointment-action.is-reschedule{color:#1b130b!important;background:#d0a965!important;border-color:#e7ca91!important;font-weight:800}
+.appointment-action.is-reschedule:hover{background:#e3c38b!important}
+.reschedule-summary{padding:14px 16px;background:#19130f;border:1px solid #6a5136;border-radius:8px;line-height:1.5}
+.reschedule-summary strong{display:block;color:#f7e8d2;margin-top:5px;font-size:14px;overflow-wrap:anywhere}
+.reschedule-summary p{font-size:13px;margin:8px 0;color:#e3bd84}
+.reschedule-summary small{color:#bba993;display:block}
+.reschedule-slots{margin-top:8px;min-height:82px;padding:13px;background:#18120f;border:1px solid #5e4832;border-radius:8px}
+.reschedule-slots[aria-busy="true"]{opacity:.75}
+.reschedule-time-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.reschedule-time{color:#f1e1ca;background:#251c16;border:1px solid #7c6248;border-radius:7px;padding:12px 4px;min-height:46px;transition:background .2s,border-color .2s}
+.reschedule-time:hover{border-color:#e2c28b;background:#382819}
+.reschedule-time.is-selected{color:#17100a;background:#d0a965;border-color:#efd4a0;font-weight:800}
+.reschedule-hint,.reschedule-empty{color:#ccb69a;font-size:12px;line-height:1.5;margin:12px 0 0}
+.reschedule-slots .error-banner{margin:0}
+#edit-dialog .modal-actions{position:sticky;bottom:-30px;background:#221c18;padding-top:10px;padding-bottom:3px;z-index:1}
+@media(max-width:580px){.reschedule-time-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.reschedule-time{min-height:48px}.appointment-action.is-reschedule{min-height:40px}}
+@media(prefers-reduced-motion:reduce){.reschedule-time{transition:none}}
+
+/* Histórico completo e paginação dos agendamentos. */
+.all-bookings-section{max-width:unset}
+.all-count{margin:16px 0;color:#e1c8ac}
+.all-pagination{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:18px;margin-top:24px;color:#e6cba6}
+.all-pagination .button:disabled{opacity:.45;cursor:not-allowed}
+@media(max-width:680px){.all-pagination{gap:10px}.day-picker-row #day-open-all{width:100%}}
+
+/* V4.3: status pendente das 18h, com ações de aprovação */
+.status-pending{background:#66502a;color:#ffe4a8;border:1px solid #96703c}
+.appointment-action.is-success{border-color:#74936a!important;color:#cbf0ca!important}
+
+@media(min-width:761px){.day-totals{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+
+/* V11 — horários em grade (portado do backup, para a agenda administrativa). */
+/* V7.4 — agenda visual do profissional: todos os horários do dia e cadastro manual */
+.staff-day-totals{grid-template-columns:repeat(5,minmax(0,1fr))}
+.staff-calendar{border:1px solid #57402d;border-radius:12px;padding:clamp(14px,2.5vw,24px);background:#19130f;margin:20px 0 30px}
+.staff-calendar-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.staff-calendar-heading h3{margin:0 0 5px;color:#f3ddbd;font-size:clamp(1.3rem,2.5vw,1.7rem)}
+.staff-calendar-heading p{font-size:12px;margin:0;max-width:550px;line-height:1.55}
+.staff-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:#d6c2aa}
+.staff-legend span{display:inline-flex;align-items:center;gap:6px}
+.staff-legend span:before{content:"";height:8px;width:8px;border-radius:50%;background:#4a9c6a}
+.staff-legend .staff-legend-busy:before{background:#d36a6a}
+.staff-legend .staff-legend-past:before{background:#877c6f}
+.staff-slots-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.staff-slot{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;min-height:65px;cursor:pointer;border:1px solid #497955;border-radius:9px;background:#1a2d21;color:#c0f0cb;padding:10px 6px;transition:background .18s,border-color .18s,transform .18s}
+.staff-slot strong{font-size:1.05rem;line-height:1.25;color:inherit}
+.staff-slot small{font-size:.7rem;line-height:1.35;font-weight:600}
+.staff-slot-available:hover{background:#264b31;border-color:#78c88c;transform:translateY(-1px)}
+.staff-slot:focus-visible{outline:2px solid #f4d098;outline-offset:3px}
+.staff-slot-occupied{background:#422320;border-color:#a4514c;color:#ffb6ae;cursor:not-allowed;opacity:1}
+.staff-slot-past,.staff-slot-unavailable{background:#24211e;border-color:#493c31;color:#94887c;cursor:not-allowed;opacity:1}
+.staff-slot:disabled{opacity:1}
+.staff-appointment-section{margin-top:27px}
+.staff-day-entry{grid-template-columns:82px minmax(0,1fr) minmax(120px,160px)}
+.staff-security-note{font-size:12px;margin-top:25px}
+.staff-modal-hint{grid-column:1/-1;margin:0 0 8px;font-size:13px;line-height:1.6;color:#e4cbad}
+.staff-modal-hint strong{color:#f9d18e}
+.staff-form-field{display:block;font-weight:700;font-size:12px;color:#edcc9c;min-width:0}
+.staff-form-field input,.staff-form-field select,.staff-form-field textarea{margin-top:7px;width:100%;box-sizing:border-box;min-height:45px;background:#19130f;border:1px solid #806248;border-radius:7px;padding:11px 12px;color:#f8e8d6;font:inherit}
+.staff-form-field textarea{resize:vertical;min-height:88px}
+.staff-field-full,.staff-form-error{grid-column:1/-1}
+.staff-form-field input:focus-visible,.staff-form-field select:focus-visible,.staff-form-field textarea:focus-visible{outline:2px solid #e3b873;outline-offset:2px}
+@media(max-width:1000px){.staff-day-totals{grid-template-columns:repeat(3,minmax(0,1fr))}.staff-day-totals>div:last-child{grid-column:auto}}
+@media(max-width:680px){.staff-slots-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.staff-day-totals{grid-template-columns:repeat(2,minmax(0,1fr))}.staff-day-totals>div:last-child{grid-column:auto}.staff-slot{min-height:62px}.staff-day-entry{grid-template-columns:75px minmax(0,1fr)}}
+@media(max-width:390px){.staff-slots-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.staff-slot{transition:none}.staff-slot:hover{transform:none}}
+
+/* V7.6 — aprovação dos próprios pedidos após 18h no painel do barbeiro */
+.staff-approve-button,.staff-confirm-whatsapp{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:38px;padding:9px 12px;border-radius:7px;font-size:12px;font-weight:800;text-decoration:none;line-height:1.35;box-sizing:border-box;cursor:pointer;max-width:100%}
+.staff-approve-button{background:#25543a;border:1px solid #5ca87a;color:#e0ffea}
+.staff-approve-button:hover{background:#32734d;border-color:#93d8a5}
+.staff-approve-button:disabled{opacity:.65;cursor:wait}
+.staff-confirm-whatsapp{background:#1b352b;border:1px solid #4c9570;color:#bdf2d0}
+.staff-confirm-whatsapp:hover{background:#26513e;border-color:#8bc8a5;color:#fff}
+.staff-approve-button:focus-visible,.staff-confirm-whatsapp:focus-visible{outline:2px solid #e9b876;outline-offset:3px}
+@media (max-width:760px){.staff-day-entry .day-state{flex-wrap:wrap;gap:10px}.staff-approve-button,.staff-confirm-whatsapp{flex:1 1 100%}}
+
+/* V7.7 — grade de horários por barbeiro no painel principal e remarcação restrita */
+.main-day-calendars{margin:28px 0 30px}
+.main-day-calendars>.text-muted{font-size:12px;margin:0 0 15px;line-height:1.6}
+.main-day-barber{background:#19130f;border:1px solid #73553a;border-radius:11px;padding:clamp(13px,2vw,20px);margin-bottom:16px}
+.main-day-barber-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.main-day-barber-heading h4{font-size:1.25rem;color:#f8dfb8;margin:0}
+.main-day-barber-heading span{color:#c4a685;font-size:12px}
+.main-day-calendars .staff-slots-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.main-day-calendars .staff-slot{min-height:67px}
+.staff-reschedule-button{display:inline-flex;justify-content:center;align-items:center;min-height:38px;padding:9px 12px;border:1px solid #e3ba7d;border-radius:7px;background:#694d2c;color:#fff0ce;font-size:12px;font-weight:800;cursor:pointer}
+.staff-reschedule-button:hover{background:#85613a}
+.staff-reschedule-button:focus-visible{outline:2px solid #f5d9a1;outline-offset:3px}
+.staff-day-entry .day-state{gap:10px}
+@media(max-width:680px){.main-day-calendars .staff-slots-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:380px){.main-day-calendars .staff-slots-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* V14 — Grade por profissional recolhida por padrão. Cada resumo é um controle nativo
+   de teclado/touch, não interfere nos botões de agendamento já existentes. */
+.main-day-calendars details.main-day-barber{padding:0;overflow:hidden}
+.main-day-calendars .main-day-barber-heading{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  flex-wrap:wrap;position:relative;padding:18px 50px 18px 20px;
+  margin:0;cursor:pointer;list-style:none;min-height:68px;
+  transition:background-color .18s ease,color .18s ease;
+}
+.main-day-calendars .main-day-barber-heading::-webkit-details-marker{display:none}
+.main-day-calendars .main-day-barber-heading::marker{content:''}
+.main-day-calendars .main-day-barber-heading:hover{background:#302218}
+.main-day-calendars .main-day-barber-heading:focus-visible{outline:2px solid #eac78e;outline-offset:-3px;border-radius:10px}
+.main-day-calendars .main-day-barber-heading::after{
+  content:'';position:absolute;right:23px;top:50%;width:9px;height:9px;
+  border-right:2px solid #efca8a;border-bottom:2px solid #efca8a;
+  transform:translateY(-68%) rotate(45deg);transition:transform .2s ease;
+}
+.main-day-calendars details.main-day-barber[open]>.main-day-barber-heading::after{transform:translateY(-28%) rotate(225deg)}
+.main-day-calendars .main-day-barber-name{font:600 1.3rem/1.3 Georgia,serif;color:#f8dfb8}
+.main-day-calendars .main-day-barber-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;color:#c4a685;font-size:12px}
+.main-day-calendars .main-day-barber-hint{color:#e4bd7b;font-weight:700;font-size:11px;letter-spacing:.01em}
+.main-day-calendars details.main-day-barber .when-open{display:none}
+.main-day-calendars details.main-day-barber[open] .when-open{display:inline}
+.main-day-calendars details.main-day-barber[open] .when-closed{display:none}
+.main-day-calendars .main-day-barber-body{padding:0 clamp(13px,2vw,20px) clamp(13px,2vw,20px)}
+@media(max-width:540px){
+  .main-day-calendars .main-day-barber-heading{padding:14px 36px 14px 13px;gap:7px}
+  .main-day-calendars .main-day-barber-heading::after{right:16px}
+  .main-day-calendars .main-day-barber-name{font-size:1.18rem}
+  .main-day-calendars .main-day-barber-meta{gap:7px 12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .main-day-calendars .main-day-barber-heading,
+  .main-day-calendars .main-day-barber-heading::after{transition:none}
+}

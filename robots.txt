@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin.php
+Disallow: /login.php
+Disallow: /setup.php
+Disallow: /api/
+Disallow: /app/
+Disallow: /sql/
+Sitemap: https://martellibarbearia.com/sitemap.xml

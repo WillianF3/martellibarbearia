@@ -1,0 +1,35 @@
+/* V4.3 — horários a partir das 18h aguardam aprovação do profissional */
+.booking-approval-info{margin:17px 0 0;border:1px solid #a77b42;border-left:4px solid #d9aa64;background:linear-gradient(115deg,#312318,#211811);border-radius:9px;padding:15px 17px;color:#ecd9be;font-size:13px;line-height:1.65}
+.booking-approval-info strong{display:block;color:#f8d399;font-size:14px;margin-bottom:3px}
+.booking-date-panel .slots-grid .slot small{line-height:1.2}
+.booking-date-panel .slots-grid .slot:has(small){min-height:64px}
+#booking-message{line-height:1.65}
+#booking-success .success-symbol{display:block}
+#booking-success:has(#success-whatsapp:not([hidden])) .booking-whatsapp-button{max-width:100%;white-space:normal}
+@media(max-width:560px){.booking-approval-info{font-size:12px;padding:12px 14px}}
+
+/* V11 — legenda de vagas e ocupação sem divulgar dados de clientes */
+.booking-day-legend{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0 16px;color:#e3d0b9;font-size:12px}
+.booking-day-legend span:before{content:'';display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+.booking-day-legend .legend-free:before{background:#489966}.booking-day-legend .legend-occupied:before{background:#cc6060}.booking-day-legend .legend-past:before{background:#8b837e}
+.booking-date-panel .slots-grid .slot{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:58px}
+.booking-date-panel .slots-grid .slot strong{font-size:16px}.booking-date-panel .slots-grid .slot small{font-size:10px;color:inherit}
+.booking-date-panel .slots-grid .slot.booking-slot-occupied{background:#512629;color:#ffd8d8;border-color:#ba6669}
+.booking-date-panel .slots-grid .slot.booking-slot-past,.booking-date-panel .slots-grid .slot.booking-slot-unavailable{background:#292422;color:#a89b90;border-color:#514337;cursor:not-allowed;opacity:.8}
+.booking-date-panel .slots-grid .slot.booking-slot-free{background:#1c3629;color:#c7f7d4;border-color:#407756}
+.booking-date-panel .slots-grid .slot.booking-slot-free.selected{background:#c5a05d;color:#160e08;border-color:#ead198}
+.booking-date-panel .slots-grid .slot:disabled:hover{transform:none;box-shadow:none}
+
+/* V15 — aviso claro após solicitação sob consulta */
+.booking-consult-dialog{width:min(92vw,540px);max-height:calc(100dvh - 36px);overflow-y:auto;margin:auto;padding:clamp(22px,4vw,36px);border-radius:14px;border:1px solid #b98b4a;background:linear-gradient(145deg,#292019,#15110e);box-shadow:0 24px 70px #0009;color:#f8ede0;text-align:center}
+.booking-consult-dialog::backdrop{background:#000c;backdrop-filter:blur(4px)}
+.booking-consult-dialog .booking-consult-icon{font-size:37px;margin-bottom:10px}
+.booking-consult-dialog h2{font-size:clamp(26px,5vw,35px);line-height:1.12;margin:10px 0 20px}
+.booking-consult-dialog p{color:#e5d2bb;line-height:1.65;font-size:14px}
+.booking-consult-dialog p strong{color:#ffe1a5}
+.booking-consult-dialog .booking-consult-note{background:#372719;border-radius:8px;padding:10px 13px;font-size:12px}
+.booking-consult-actions{display:grid;gap:12px;margin-top:24px}
+.booking-consult-actions .button{display:flex;justify-content:center;align-items:center;min-height:48px;text-align:center;white-space:normal;padding:12px}
+.booking-consult-actions .booking-whatsapp-button{background:#23815d;color:white;border:1px solid #41ad7d}
+.booking-consult-actions .booking-whatsapp-button:hover{background:#2a966d}
+.booking-consult-actions [hidden]{display:none}

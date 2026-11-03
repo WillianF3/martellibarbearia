@@ -1,0 +1,81 @@
+/* V26: aperfeiçoamento do agendamento VIP. Regras e API do V25 preservadas. */
+.vip-calendar-booking-panel{padding:clamp(17px,3vw,30px)}
+.vip-booking-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:20px 0 27px}
+.vip-booking-steps span{display:flex;align-items:center;gap:9px;color:#ae9d8b;font-size:.73rem;font-weight:700;padding:10px;border-bottom:2px solid #55402f}
+.vip-booking-steps b{border:1px solid #73563c;border-radius:50%;width:27px;height:27px;display:grid;place-items:center;font-size:.76rem}
+.vip-booking-steps .current{color:#f9dbab;border-color:#dfba7c}.vip-booking-steps .current b{background:#e9c285;color:#21170f}
+.vip-booking-steps .is-done{color:#8fcb9e;border-color:#437a53}.vip-booking-steps .is-done b{border-color:#437a53}
+.vip-booking-layout{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(245px,1fr);gap:20px;align-items:start}
+.vip-booking-choices{display:grid;gap:18px;min-width:0}
+.vip-booking-step{background:#1a1412;border:1px solid #5d4834;padding:18px;border-radius:13px}
+.vip-booking-step-title{display:flex;align-items:center;gap:13px;margin-bottom:16px}
+.vip-booking-step-title h3,.vip-booking-summary h3{margin:0;color:#f9ebdc;font:400 1.5rem 'DM Serif Display',Georgia,serif}
+.vip-booking-step-title p{font-size:.78rem;margin:3px 0 0}.vip-step-num{display:grid;place-items:center;flex:none;width:37px;height:37px;border-radius:11px;background:#4a3422;color:#f4d8a7;font-size:.78rem;font-weight:800}
+.vip-barber-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.vip-barber-choice{display:flex;align-items:center;gap:9px;text-align:left;min-width:0;cursor:pointer;background:#2c211a;color:#f5e7d2;border:1px solid #76573e;border-radius:10px;padding:13px;font:700 .85rem 'Manrope',sans-serif;transition:background .16s,border-color .16s,transform .16s}
+.vip-barber-choice small{margin-left:auto;color:#b7a28c;font-weight:600;font-size:.66rem}.vip-barber-avatar{background:#533823;border-radius:50%;width:34px;height:34px;display:grid;place-items:center;color:#efce98;flex:none}
+.vip-barber-choice:hover:not(:disabled),.vip-date-choice:hover:not(:disabled),.vip-calendar-slot:hover:not(:disabled){background:#4b3322;transform:translateY(-1px)}
+.vip-barber-choice.selected{background:#4d3926;border-color:#f0c98e;box-shadow:inset 0 0 0 1px #f0c98e}.vip-barber-choice.selected small{color:#f9d7a0}
+.vip-calendar-date-navigation{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:11px}.vip-calendar-date-navigation strong{font-size:.85rem;text-align:center;color:#f5d7a7;font-variant-numeric:tabular-nums}
+.vip-small-nav{width:40px;height:40px;border:1px solid #8f6d48;color:#f5d7a7;background:#34251b;border-radius:8px;font-size:1.7rem;cursor:pointer;line-height:1}
+.vip-calendar-date-rail{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:7px}.vip-date-choice{padding:11px 4px;background:#2b211a;color:#d5bea2;border:1px solid #624b38;border-radius:10px;cursor:pointer;font-family:'Manrope',sans-serif;display:flex;align-items:center;flex-direction:column;gap:4px;transition:background .16s,transform .16s}
+.vip-date-choice span,.vip-date-choice small{font-size:.66rem;text-transform:capitalize;color:#c7b099}.vip-date-choice strong{font-size:1.23rem;color:#f7dfb6}.vip-date-choice.chosen{background:#d7b37d;border-color:#f2d5a4}.vip-date-choice.chosen strong,.vip-date-choice.chosen span,.vip-date-choice.chosen small{color:#22190f}
+.vip-calendar-manual-date{display:flex!important;align-items:center;justify-content:space-between;gap:15px;margin-top:14px;font-size:.73rem!important}.vip-calendar-manual-date input{max-width:180px;padding:10px!important}
+.vip-calendar-shifts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}.vip-calendar-shifts[hidden]{display:none}.vip-calendar-shifts button{background:#30231a;color:#ddc5a5;border:1px solid #7d5c3f;border-radius:999px;padding:8px 11px;cursor:pointer;font-size:.75rem;font-weight:700}.vip-calendar-shifts .is-active{background:#d8b37b;color:#24170f}
+.vip-calendar-slots{margin:8px 0!important}.vip-calendar-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:9px}.vip-calendar-slot{padding:14px 6px!important;transition:background .16s,transform .16s}.vip-calendar-slot strong{display:block}.vip-calendar-slot small{font-size:.68rem}.vip-calendar-slot.requires-approval{border-color:#a67b42}.vip-calendar-slot.chosen{background:#dcb883!important;border-color:#f1d7a6!important;outline:2px solid #f1d7a6}.vip-calendar-slot.chosen strong,.vip-calendar-slot.chosen small{color:#24180f!important}
+.vip-calendar-no-slots{grid-column:1/-1}.vip-next-day{cursor:pointer;border:1px solid #a7814e;background:transparent;color:#ebc78d;border-radius:7px;padding:10px 15px;font-weight:700}
+.vip-calendar-information{margin:15px 0 0!important;padding:11px;border-left:3px solid #b79158;background:#2c2017}
+.vip-booking-summary{position:sticky;top:15px;background:#34251b;border:1px solid #aa824e;border-radius:13px;padding:22px;min-width:0;box-shadow:0 14px 35px #08070640}
+.vip-booking-summary h3{font-size:1.8rem;margin:6px 0 2px}.vip-summary-intro{font-size:.78rem;margin-bottom:12px}
+.vip-booking-summary dl{margin:15px 0}.vip-booking-summary dl>div{display:grid;grid-template-columns:95px minmax(0,1fr);gap:8px;border-bottom:1px solid #6a4f38;padding:10px 0}.vip-booking-summary dt{font-size:.72rem;color:#cdb48f}.vip-booking-summary dd{margin:0;font-weight:700;font-size:.81rem;color:#f7e6cd;overflow-wrap:anywhere}
+.vip-summary-notice{background:#4a3320;border-left:3px solid #efc58b;padding:12px;font-size:.78rem;color:#f7d9ab!important}
+.vip-summary-remaining{font-size:.76rem;color:#efce99!important}.vip-booking-summary .vip-calendar-confirm{width:100%;text-align:center;min-height:48px;margin-top:8px}.vip-summary-security{font-size:.7rem!important;line-height:1.5;text-align:center}
+.vip-booking-dialog{border:1px solid #b58b56;border-radius:15px;background:#211915;color:#f9ebd8;padding:0;width:min(94vw,480px);max-height:90vh;box-shadow:0 22px 80px #000b}
+.vip-booking-dialog::backdrop{background:#000b}.vip-booking-dialog-inner{padding:27px}.vip-booking-dialog h2{font:400 2rem 'DM Serif Display',Georgia,serif;margin:8px 0}.vip-booking-dialog p{color:#d8c2aa;line-height:1.6}.vip-review-actions{display:flex;justify-content:flex-end;gap:9px;align-items:center;margin-top:20px}.vip-review-actions .vip-calendar-confirm{margin:0}
+.vip-calendar button:disabled{cursor:not-allowed;opacity:.48}.vip-calendar button:focus-visible,.vip-booking-dialog button:focus-visible{outline:2px solid #f1d09b;outline-offset:3px}.vip-sr-only{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}
+@media(max-width:1050px){.vip-booking-layout{grid-template-columns:minmax(0,1.5fr) minmax(230px,1fr)}.vip-barber-cards{grid-template-columns:1fr}.vip-calendar-date-rail{gap:4px}}
+@media(max-width:820px){.vip-booking-layout{grid-template-columns:minmax(0,1fr)}.vip-booking-summary{position:static;order:2}.vip-barber-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.vip-booking-steps{gap:2px}.vip-booking-steps span{font-size:.55rem;padding:7px 3px;gap:4px;flex-direction:column}.vip-booking-steps b{width:23px;height:23px}.vip-booking-step{padding:14px}.vip-barber-cards{grid-template-columns:1fr}.vip-calendar-date-rail{grid-template-columns:repeat(7,minmax(0,1fr));gap:3px}.vip-date-choice{padding:9px 0}.vip-date-choice strong{font-size:1rem}.vip-date-choice span,.vip-date-choice small{font-size:.56rem}.vip-calendar-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}.vip-calendar-manual-date{flex-direction:column;align-items:stretch}.vip-calendar-manual-date input{max-width:none}.vip-review-actions{flex-direction:column}.vip-review-actions button{width:100%}}
+@media(prefers-reduced-motion:reduce){.vip-calendar *{transition:none!important;scroll-behavior:auto!important}}
+
+/* V33 — clareza na vigência, datas atuais e limite de atendimentos. */
+.vip-calendar-period-panel{margin:0 0 22px;padding:19px 22px;background:#251b15;border:1px solid #856643;border-radius:14px}
+.vip-calendar-period-dates{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;color:#f5ddb6;font-size:.88rem}
+.vip-calendar-period-dates span{font-size:.78rem;color:#d4b897}
+.vip-cycle-guidance{margin:12px 0 0!important;border-left:3px solid #d3a96b;padding:10px 13px;background:#39281b;color:#f8e3c4!important;line-height:1.55;font-size:.82rem}
+.vip-cycle-guidance.is-blocked{background:#3b2921;border-left-color:#e49a65}
+.vip-cycle-guidance.is-ready{background:#243529;border-left-color:#6baf7b}
+.vip-calendar-date-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.vip-calendar-date-actions button.vip-calendar-outline{cursor:pointer;background:#312318;font-family:inherit}
+.vip-calendar-date-actions [hidden],.vip-calendar-show-more[hidden],.vip-summary-block[hidden],.vip-cycle-guidance[hidden]{display:none!important}
+.vip-date-choice.out-of-plan{background:#201b18;color:#988775;border-color:#41352b;opacity:.58}
+.vip-date-choice.out-of-plan:hover{transform:none}
+.vip-calendar-show-more{padding:11px 15px;border:1px solid #a98150;border-radius:8px;background:#332419;color:#eed4a6;cursor:pointer;margin-top:10px;font-weight:700}
+.vip-summary-block{border-left:3px solid #c18b61;background:#463024;color:#f7dab6!important;font-size:.78rem;padding:12px;line-height:1.55}
+.vip-calendar-history>div{scroll-margin-top:20px}
+@media(max-width:600px){.vip-calendar-period-panel{padding:15px}.vip-calendar-period-dates{align-items:flex-start;flex-direction:column;gap:4px}.vip-calendar-date-actions a,.vip-calendar-date-actions button{width:100%;text-align:center}.vip-calendar-show-more{width:100%}}
+
+.vip-booking-steps[hidden],.vip-booking-layout[hidden],.vip-booking-unavailable[hidden]{display:none!important}
+.vip-booking-unavailable{border:1px solid #85603f;background:#34261e;padding:22px;border-radius:12px;margin-top:14px}
+.vip-booking-unavailable strong{display:block;font-size:1.08rem;color:#f4dbb5}
+.vip-booking-unavailable p{margin:10px 0 18px;line-height:1.55}
+.vip-booking-unavailable a{display:inline-flex;align-items:center;border:1px solid #b28b57;border-radius:7px;color:#f4d39b;padding:11px 15px;text-decoration:none;font-size:.78rem;font-weight:700}
+
+/* V34 — o cliente agenda um corte por vez e pode remarcar reservas futuras. */
+.vip-calendar-history .vip-history-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.vip-history-reschedule{border:1px solid #d9b27a;background:#342419;color:#f5dcab;border-radius:8px;padding:10px 15px;cursor:pointer;font:700 .76rem 'Manrope',sans-serif}
+.vip-history-reschedule:hover{background:#563c24}
+.vip-reschedule-dialog label{display:grid;gap:8px;color:#edcb97;font-size:.82rem;font-weight:700;margin:15px 0}
+.vip-reschedule-dialog select,.vip-reschedule-dialog input{width:100%;padding:12px;border:1px solid #936f4a;border-radius:8px;color:#f8ecd9;background:#120e0c;color-scheme:dark;font:500 1rem 'Manrope',sans-serif}
+.vip-reschedule-slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-height:230px;overflow:auto;margin:12px 0}
+.vip-reschedule-slot{padding:12px 8px;border:1px solid #8b6846;border-radius:8px;background:#34271d;color:#f5e4c8;font:700 .78rem 'Manrope',sans-serif;cursor:pointer}
+.vip-reschedule-slot:hover,.vip-reschedule-slot.chosen{background:#dbb67f;color:#20160f;border-color:#f3d4a0}
+.vip-reschedule-selected{color:#f5d5a2!important;font-size:.79rem;min-height:1.3em}
+.vip-reschedule-dialog #vip-reschedule-hint{font-size:.82rem;color:#ebd6bd}
+@media(max-width:520px){.vip-reschedule-slots{grid-template-columns:repeat(2,minmax(0,1fr))}.vip-history-reschedule{width:100%}}
+
+/* V55: dia com corte VIP reservado não pode receber outra reserva do cliente. */
+.vip-date-choice.is-reserved,.vip-date-choice.is-reserved:disabled{background:#34231d;color:#ead0bf;border-color:#8e5a46;opacity:.82;cursor:not-allowed}
+.vip-date-choice.is-reserved strong{color:#edd4bd}
+.vip-date-choice.is-reserved small{color:#ffb6a9;font-weight:700}
+.vip-date-choice.is-reserved:hover{transform:none}

@@ -1,0 +1,116 @@
+/* CABRA MACHO V3 — Layout administrativo unificado.
+   As seções e ações existentes permanecem ligadas aos JS originais. */
+:root{--c-admin-bg:#0d0c0b;--c-admin-rail:#15120f;--c-admin-surface:#211a15;--c-admin-surface-2:#2a2018;--c-admin-border:#57412e;--c-admin-text:#f7efe5;--c-admin-muted:#bfae9c;--c-admin-accent:#e0b676;--c-admin-soft:#f5d59f}
+.admin-shell,.biz-shell,.management-shell{background:var(--c-admin-bg);color:var(--c-admin-text);min-height:100vh}
+.admin-shell{grid-template-columns:260px minmax(0,1fr)}
+.biz-shell{grid-template-columns:260px minmax(0,1fr)}
+.management-shell{display:grid;grid-template-columns:260px minmax(0,1fr)}
+.admin-sidebar.cabra-unified-sidebar,.biz-sidebar.cabra-unified-sidebar,.management-sidebar.cabra-unified-sidebar{padding:27px 16px 18px;background:var(--c-admin-rail);border-right:1px solid var(--c-admin-border);display:flex;flex-direction:column;gap:0;position:sticky;top:0;height:100dvh;max-height:100dvh;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#6f5436 transparent}
+.cabra-sidebar-logo{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:4px 6px 23px;border-bottom:1px solid var(--c-admin-border);margin-bottom:18px;color:var(--c-admin-accent);text-align:center;text-decoration:none}
+.cabra-sidebar-logo img{width:116px!important;height:108px!important;max-width:100%;object-fit:contain}
+.cabra-sidebar-logo span{font:800 9px/1.5 Manrope,Arial,sans-serif;letter-spacing:.2em;color:var(--c-admin-accent)}
+.cabra-nav,.admin-sidebar .cabra-nav,.biz-sidebar .cabra-nav,.management-sidebar .cabra-nav{display:grid;gap:13px;width:100%;align-content:start}
+.cabra-nav-group{display:grid;gap:3px;border:1px solid #443324;border-radius:10px;background:rgba(40,29,22,.52);padding:12px 8px 9px;min-width:0}
+.cabra-nav-label{color:var(--c-admin-accent)!important;font:800 10px/1.45 Manrope,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin:0 8px 7px!important;padding-bottom:8px;border-bottom:1px solid #5b422a}
+.cabra-unified-sidebar .cabra-nav-group a,.cabra-unified-sidebar .cabra-nav-group button,.admin-sidebar .cabra-nav-group button,.biz-sidebar .cabra-nav-group a,.management-sidebar .cabra-nav-group a{display:block;width:100%;min-height:36px;margin:0;padding:9px 11px;line-height:1.35;background:none;border:1px solid transparent;border-radius:7px;color:#dfd0c0;font:600 12px/1.35 Manrope,Arial,sans-serif;letter-spacing:0;text-align:left;text-transform:none;text-decoration:none;white-space:normal;cursor:pointer;transition:background .15s ease,color .15s ease,border-color .15s ease}
+.cabra-unified-sidebar .cabra-nav-group a:hover,.cabra-unified-sidebar .cabra-nav-group button:hover,.cabra-unified-sidebar .cabra-nav-group a.active,.cabra-unified-sidebar .cabra-nav-group button.active{background:#49321f!important;border-color:#87623e!important;color:#ffe0a9!important}
+.cabra-sidebar-bottom{margin-top:auto;padding:20px 8px 8px;display:grid;gap:12px}
+.cabra-site-link,.biz-shell .cabra-site-link{color:#e2b879;text-decoration:none;font-size:12px;font-weight:800}
+.cabra-site-link:hover{color:#fff0d6}
+.cabra-sidebar-bottom #logout{margin:0;min-height:41px;padding:9px 10px;font-size:11px}
+.admin-content,.biz-main,.management-content{background:var(--c-admin-bg);min-width:0;width:100%}
+.admin-content,.biz-main{padding:34px clamp(18px,3vw,44px)}
+.management-content{padding:34px clamp(18px,3vw,44px);max-width:1500px}
+.admin-heading,.biz-heading{padding:0 0 24px;border-bottom:1px solid #4a3626;margin-bottom:26px;gap:20px}
+.admin-heading h1,.biz-heading h1,.management-content h1{font-family:'Barlow Condensed',Impact,sans-serif;font-size:clamp(33px,3.5vw,49px);font-weight:900;letter-spacing:.018em;line-height:1.05;margin:7px 0 0;color:#fff8ed;text-transform:uppercase}
+.admin-heading .eyebrow,.biz-eyebrow,.management-intro .eyebrow{color:var(--c-admin-accent);letter-spacing:.2em;font-size:10px;font-weight:800}
+.admin-actions{flex-wrap:wrap;gap:10px;align-items:center}
+.admin-actions > span,.biz-heading-actions span{color:var(--c-admin-muted);font-size:12px}
+.admin-content .stats-grid > *, .admin-content .stat-card,.admin-content .admin-section,.biz-card,.biz-panel,.management-section{background:var(--c-admin-surface);border:1px solid var(--c-admin-border);border-radius:10px;box-shadow:0 10px 30px #0001}
+.admin-content .admin-section{padding:24px;margin:0 0 22px}
+.admin-content .stat-card{background:linear-gradient(140deg,#2c2119,#1d1712)}
+.admin-content .stat-card strong,.admin-content .stat-card .stat-number{color:#fff5e8}
+.admin-content .stat-card h3,.admin-content .stat-card .stat-label,.admin-content .toolbar h2{color:var(--c-admin-accent)}
+.admin-content .data-table th,.admin-content .day-agenda-table th{background:#35271d;color:#ebd2af}
+.admin-content .data-table td,.admin-content .data-table th{border-bottom-color:#55402f}
+.admin-content .table-scroll{border:1px solid #584431;border-radius:8px;overflow:auto}
+.admin-content .admin-section h2,.management-section h2{font-family:'Barlow Condensed',Impact,sans-serif;color:#fff0d6}
+.admin-content .day-shortcut,.admin-content .agenda-section,.admin-content .day-shortcut-section{border-color:#795632;background:linear-gradient(135deg,#33251b,#201913)}
+.admin-content .day-shortcut-arrow{border-color:#956a39;color:var(--c-admin-soft)}
+.admin-content .day-shortcut-open,.admin-content .button-gold{background:var(--c-admin-accent)!important;border-color:var(--c-admin-accent)!important;color:#1e150d!important}
+.admin-content .button-outline{border-color:#94734e;color:#f2d3a0;background:#19130f}
+.admin-content input,.admin-content select,.admin-content textarea,.management-content input,.management-content select,.management-content textarea{background:#17120e;border:1px solid #75583b;color:#f9f1e6;border-radius:7px}
+.admin-content input:focus,.admin-content select:focus,.management-content input:focus,.management-content select:focus{border-color:var(--c-admin-accent)}
+.admin-content label,.management-content label{color:#efc68c}
+.admin-mobile-jump{background:#251b15;border:1px solid #735438;border-radius:8px;padding:5px 9px}
+.admin-mobile-jump select{background:#1b140f}
+.biz-shell,.biz-shell .biz-main{font-family:Manrope,Arial,sans-serif;color:var(--c-admin-text)}
+.biz-heading-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.biz-heading-actions a{display:inline-flex;align-items:center;padding:9px 13px;border:1px solid #866341;border-radius:7px;text-decoration:none;font-size:12px;font-weight:700;color:var(--c-admin-soft)}
+.biz-heading-actions a:hover{background:#342516}
+.biz-shell .biz-heading h1{font-size:clamp(33px,3.5vw,49px)}
+.biz-shell .biz-card,.biz-shell .biz-panel{background:var(--c-admin-surface);border-color:var(--c-admin-border)}
+.biz-shell .biz-card{background:linear-gradient(145deg,#2b2118,#1d1712)}
+.biz-shell .biz-card strong{color:#fff1df}
+.biz-shell .biz-card>span,.biz-shell .biz-panel p,.biz-shell .biz-help,.biz-shell .biz-card small{color:var(--c-admin-muted)}
+.biz-shell .biz-panel h2,.biz-shell .biz-panel h3{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:900;color:#fff0d8;letter-spacing:.025em}
+.biz-shell .biz-panel h2{font-size:23px;text-transform:uppercase}
+.biz-shell .biz-panel h3{color:var(--c-admin-accent)}
+.biz-shell .biz-panel .biz-actions a{display:inline-flex;align-items:center;border:1px solid #866642;background:#2b2018;border-radius:6px;padding:9px 13px;font-size:12px;font-weight:700;text-decoration:none}
+.biz-shell .biz-filter{background:#211a15;border:1px solid var(--c-admin-border);padding:19px 20px;gap:14px;border-radius:10px}
+.biz-shell .biz-filter-intro{display:grid;gap:4px;width:100%;margin-bottom:2px}
+.biz-shell .biz-filter-intro strong{font-weight:800;font-size:13px;color:var(--c-admin-soft)}
+.biz-shell .biz-filter-intro span{font-size:11px;color:var(--c-admin-muted)}
+.biz-shell .biz-filter label,#biz-dialog label{color:var(--c-admin-accent);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin:0}
+.biz-shell input,.biz-shell select,.biz-shell textarea,#biz-dialog input,#biz-dialog select,#biz-dialog textarea{background:#17120e;border-color:#795b3c;color:#fff1e2;border-radius:7px}
+.biz-shell button,#biz-dialog button{background:#34271c;color:#fff1dc;border:1px solid #73553c;border-radius:7px}
+.biz-shell button:hover,#biz-dialog button:hover{background:#47321f;border-color:var(--c-admin-accent)}
+.biz-shell .biz-primary,#biz-dialog .biz-primary{background:var(--c-admin-accent)!important;border-color:var(--c-admin-accent)!important;color:#1b120a!important;font-weight:800}
+.biz-shell .biz-table th{color:#e3c599;border-color:#6d5135;background:#32251b}
+.biz-shell .biz-table td{color:#f0e6d8;border-color:#453527}
+.biz-shell .biz-tag{background:#3e3124;color:#eee1ce}
+.biz-shell .biz-bar{background:#4d3927}
+.biz-shell .biz-bar i{background:var(--c-admin-accent)}
+.biz-shell .biz-empty{color:#bfae9c!important}
+#biz-dialog{background:#251b14;color:var(--c-admin-text);border-color:#775735}
+#biz-dialog h2{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:900;color:#fff3df;text-transform:uppercase}
+#biz-dialog .biz-form-grid p{color:#ddc5a7}
+.biz-mobile{display:none}
+.management-sidebar{font-family:Manrope,Arial,sans-serif}
+.management-intro{margin-bottom:25px;padding-bottom:23px;border-bottom:1px solid #503b29}
+.management-intro>p{color:var(--c-admin-muted);max-width:720px;line-height:1.7;margin:12px 0 0}
+.management-back{display:inline-block;color:var(--c-admin-accent);font-size:12px;font-weight:800;margin:12px 0 3px}
+.management-section{padding:28px;margin-bottom:22px;scroll-margin-top:25px}
+.management-section>p{color:var(--c-admin-muted);max-width:850px;line-height:1.7}
+.management-section .modal-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 18px;align-items:end;margin:20px 0 24px}
+.management-section .modal-fields label{margin:0}
+.management-section .modal-fields button{grid-column:1/-1;justify-self:start}
+.management-section .modal-fields textarea{min-height:95px}
+.management-content #wait-list,.management-content #block-list,.management-content #report-results{overflow:auto}
+.management-content .table-scroll{overflow:auto}
+@media(min-width:761px){.admin-sidebar .cabra-nav,.biz-sidebar .cabra-nav,.management-sidebar .cabra-nav{display:grid!important;overflow:visible!important}.admin-sidebar.cabra-unified-sidebar,.biz-sidebar.cabra-unified-sidebar,.management-sidebar.cabra-unified-sidebar{align-self:start}}
+@media(max-width:1050px) and (min-width:761px){.admin-shell,.biz-shell,.management-shell{grid-template-columns:225px minmax(0,1fr)}.admin-content,.biz-main,.management-content{padding:25px 19px}.cabra-nav-group{padding-inline:6px}}
+@media(max-width:760px){
+ .admin-shell,.biz-shell,.management-shell{display:block}
+ .admin-sidebar.cabra-unified-sidebar,.biz-sidebar.cabra-unified-sidebar,.management-sidebar.cabra-unified-sidebar{position:relative;height:auto;max-height:none;overflow:visible;padding:10px 14px;border-right:none;border-bottom:1px solid var(--c-admin-border);display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:12px}
+ .cabra-sidebar-logo{padding:0;margin:0;border:0;flex-direction:row;gap:9px;justify-content:flex-start;text-align:left}
+ .cabra-sidebar-logo img{width:54px!important;height:52px!important;max-width:54px!important}
+ .cabra-sidebar-logo span{font-size:8px;max-width:135px;text-align:left}
+ .admin-sidebar .cabra-nav,.biz-sidebar .cabra-nav,.management-sidebar .cabra-nav{display:none!important}
+ .admin-sidebar .cabra-sidebar-bottom{margin:0;padding:0}
+ .admin-sidebar #logout{font-size:10px;min-height:36px;padding:8px 10px;width:auto;white-space:nowrap}
+ .biz-sidebar .cabra-sidebar-bottom,.management-sidebar .cabra-sidebar-bottom{margin:0;padding:0}
+ .biz-shell .biz-main,.admin-content,.management-content{padding:22px 14px}
+ .biz-mobile{display:grid;grid-template-columns:1fr;gap:7px;background:#211a15;border:1px solid var(--c-admin-border);padding:12px;margin-bottom:18px;border-radius:10px}
+ .biz-mobile label{font-size:11px;color:var(--c-admin-accent);font-weight:800}
+ .biz-mobile select{width:100%;flex:auto}
+ .admin-heading,.biz-heading{padding-bottom:16px;margin-bottom:18px}
+ .admin-heading h1,.biz-heading h1,.management-content h1{font-size:clamp(32px,8vw,41px)}
+ .admin-actions{width:100%}
+ .admin-mobile-jump{display:block}
+ .management-section{padding:18px}
+ .management-section .modal-fields{grid-template-columns:1fr}
+ .biz-heading-actions{gap:8px}
+ .biz-heading-actions a{font-size:11px;padding:7px 10px}
+}
+@media print{.cabra-unified-sidebar,.biz-heading-actions,.admin-actions,.management-back{display:none!important}.admin-shell,.biz-shell,.management-shell{display:block}.admin-content,.biz-main,.management-content{padding:0;background:#fff;color:#000}}

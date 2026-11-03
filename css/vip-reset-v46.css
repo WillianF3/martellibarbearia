@@ -1,0 +1,5 @@
+.vip-recovery-hint{margin-top:18px;font-size:.84rem;line-height:1.65;color:#d9c5ac}
+#vip-recovery-feedback:not([hidden]),#vip-reset-feedback:not([hidden]){margin-top:14px;padding:13px 16px;border-radius:8px;border:1px solid #b1915f;background:#35291d;color:#f4dcb7;line-height:1.5}
+#vip-email-recovery,#vip-email-new-password{display:flex;flex-direction:column;gap:12px}
+#vip-email-recovery label,#vip-email-new-password label{margin-top:7px}
+#vip-email-recovery input,#vip-email-new-password input{min-height:48px}

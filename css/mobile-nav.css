@@ -1,0 +1,59 @@
+.martelli-mobile-nav { display: none; }
+
+@media (max-width: 760px) {
+  html:has(.martelli-mobile-nav) {
+    --martelli-mobile-nav-space: calc(max(78px, 4.875rem) + env(safe-area-inset-bottom, 0px));
+    scroll-padding-bottom: var(--martelli-mobile-nav-space);
+  }
+
+  body:has(.martelli-mobile-nav) {
+    padding-bottom: var(--martelli-mobile-nav-space);
+  }
+
+  body:has(.martelli-mobile-nav) .martelli-social-float {
+    bottom: calc(var(--martelli-mobile-nav-space) + 8px);
+    z-index: 27;
+  }
+
+  body:has(.martelli-mobile-nav) .floating-booking-v5 { display: none; }
+
+  .martelli-mobile-nav {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 28;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px;
+    padding: 6px max(8px, env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
+    border-top: 1px solid #775537;
+    background: #17110e;
+    box-shadow: 0 -8px 24px #0005;
+  }
+
+  .martelli-mobile-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-height: 54px;
+    padding: 5px 2px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: #f0dfca;
+    font-size: .75rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .martelli-mobile-nav svg { width: 21px; height: 21px; flex: none; }
+  .martelli-mobile-nav a[aria-current="page"] {
+    border-color: #89633c;
+    background: #38281d;
+    color: #f5ce8a;
+  }
+  .martelli-mobile-nav a:focus-visible {
+    outline: 2px solid #f5ce8a;
+    outline-offset: -2px;
+  }
+}

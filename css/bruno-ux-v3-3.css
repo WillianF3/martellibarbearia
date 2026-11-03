@@ -1,0 +1,80 @@
+/* Bruno V3.3 — melhorias progressivas do mobile e do fluxo de reserva.
+   Última folha de estilo: não modifica PHP, banco nem a segurança da API. */
+#booking-time-picker[hidden],#booking-time-picked[hidden]{display:none!important}
+.booking-time-picked{display:flex;align-items:center;gap:15px;padding:18px;border-radius:13px;background:linear-gradient(115deg,#2c2116,#19140f);border:1px solid #b79053;box-shadow:0 12px 35px #0003;flex-wrap:wrap}
+.booking-picked-icon{display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;border-radius:50%;background:#315642;color:#dff3df;font-size:27px;border:1px solid #588a61}
+.booking-picked-info{flex:1;min-width:160px;display:flex;flex-direction:column;gap:3px}
+.booking-picked-info>span{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#dfc69c;font-weight:800}
+.booking-picked-info strong{font-family:var(--display);font-size:clamp(1.35rem,2.8vw,1.85rem);color:#fbf1df;text-transform:capitalize;line-height:1.2}
+.booking-picked-info small{color:#b8aa96;font-size:12px;line-height:1.5}
+.booking-change-button{min-height:43px;flex:0 0 auto;font-size:11px;padding:11px 16px;border-color:#b28c55;background:#211911}
+#booking-client-panel{scroll-margin-top:100px;border-color:#6a5439;box-shadow:0 8px 26px #0002}
+#booking-time-picker{scroll-margin-top:115px}
+.booking-date-panel{border-color:#5e482f;background:linear-gradient(155deg,#292018,#1a1511 60%)}
+.booking-calendar{background:linear-gradient(135deg,#211912,#130f0c);border-color:#796043;border-radius:11px;box-shadow:inset 0 1px #ffffff0c}
+.booking-day{border-radius:10px;background:linear-gradient(150deg,#281e15,#17120d);border-color:#67523e;box-shadow:0 5px 11px #0002;min-height:99px}
+.booking-day .booking-weekday{font-weight:700;font-size:12px;color:#e0c69e}
+.booking-day strong{font-size:30px}
+.booking-day .booking-day-hint{font-size:10px}
+.booking-day.is-selected{box-shadow:0 0 0 2px #deb97a,0 10px 19px #0003}
+.booking-date-panel .slots-grid{margin-top:15px;gap:10px}
+.booking-date-panel .slots-grid .slot{border:1px solid #75583a;background:linear-gradient(180deg,#251b14,#15100c);min-height:55px;border-radius:9px;font-weight:700;font-size:16px;transition:background .2s,border-color .2s,transform .2s}
+.booking-date-panel .slots-grid .slot:hover,.booking-date-panel .slots-grid .slot:focus-visible{border-color:#d3aa6b;background:#382719}
+.booking-date-panel .slots-grid .slot.selected{background:#c5a05d;color:#140e08;border-color:#f2cf8c}
+.booking-slots-heading{margin:22px 0 10px;font-size:clamp(1.4rem,3.5vw,1.95rem)}
+.booking-helper{color:#cfc1b3;font-size:14px}
+.booking-other-date{background:#211912;border-color:#6d5439;border-radius:10px;padding:13px 15px;margin-top:15px}
+.booking-other-date summary{font-size:13px;min-height:28px;color:#f1c98a}
+
+/* Catálogo compacto, mais destacado e legível no iPhone */
+.v4-services .react-services.react-ready{max-width:1050px}
+.v4-services .service-explorer-toolbar{display:flex;flex-direction:column;align-items:stretch;gap:13px;padding:0 0 23px;border:0;margin:0 0 19px}
+.v4-services .service-filter-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.v4-services .service-filter-tabs .filter-pill{border-radius:9px;min-width:0;min-height:45px;padding:9px 7px;background:#251b14;font-size:12px;line-height:1.2;color:#ead9bf;box-shadow:0 5px 15px #0002}
+.v4-services .service-filter-tabs .filter-pill.active{box-shadow:0 0 0 1px #f1d397,0 7px 20px #0003;color:#140e09}
+.v4-services .service-search{display:block;flex:none;margin:0;width:100%;min-width:0;max-width:none;border:1px solid #856945;border-radius:10px;box-shadow:inset 0 1px #ffffff0b;background:#1b150f;padding:0 1px}
+.v4-services .service-search:focus-within{border-color:#efd29c;box-shadow:0 0 0 2px #b18d5655}
+.v4-services .service-search .service-search-icon{left:15px;top:7px;font-size:24px}
+.v4-services .service-search input{display:block;width:100%;min-height:50px;border:0!important;outline:none!important;border-radius:10px;padding:10px 12px 10px 42px;background:transparent!important;box-shadow:none!important;font-size:14px}
+.v4-services .service-cards-grid{gap:12px;grid-template-columns:1fr}
+.v4-services .service-v5-card{border:1px solid #53412d;background:linear-gradient(155deg,#251b14,#130f0c 85%);border-radius:12px;box-shadow:0 8px 25px #0003;padding:21px 24px;min-height:145px;transition:border-color .23s,box-shadow .23s,background .23s!important}
+.v4-services .service-v5-card:hover,.v4-services .service-v5-card:focus-within{border-color:#a98252;background:linear-gradient(155deg,#342315,#1a130e);box-shadow:0 15px 35px #0004}
+.v4-services .service-card-body h3{font-size:clamp(1.6rem,2.5vw,2.2rem)}
+.v4-services .service-card-body p{font-size:13px;line-height:1.6}
+.v4-services .service-card-bottom{gap:19px}
+.v4-services .service-card-link{border-radius:8px;min-height:43px;min-width:105px;background:#2c2117;border-color:#ad8754}
+
+/* Barbearia: visibilidade garantida para cards assíncronos e visual premium */
+.v4-team{background:radial-gradient(circle at 50% 0%,#2a2017,#15100d 66%)}
+.v4-team .section-heading{margin-bottom:35px}
+.v4-team .barbers-grid{gap:14px;min-height:0}
+.v4-team .barber-card{opacity:1;border:1px solid #685036;background:linear-gradient(130deg,#292016,#15100d);padding:24px;border-radius:12px;box-shadow:0 12px 35px #0002;transition:transform .23s,border-color .23s,box-shadow .23s}
+.v4-team .barber-card:hover,.v4-team .barber-card:focus-within{border-color:#c29b60;box-shadow:0 18px 39px #0004}
+.v4-team .barber-card .avatar{background:#3d2d1c;border:1px solid #b89254;color:#f2dbb2;box-shadow:inset 0 0 0 4px #ffffff0a}
+.v4-team .barber-book-link{display:inline-flex;align-items:center;gap:7px;margin-top:15px;padding:9px 13px;border:1px solid #8b6b45;border-radius:8px;background:#271d15;font-weight:750;text-decoration:none}
+.v4-team .barber-book-link:hover,.v4-team .barber-book-link:focus-visible{background:#c5a05d;color:#15100b}
+
+@media (max-width:760px){
+ .booking-day-strip{scrollbar-width:thin}
+ .booking-time-picked{padding:15px;gap:12px}
+ .booking-change-button{width:100%;justify-content:center}
+ .v4-services .service-v5-card{grid-template-columns:minmax(0,1fr);grid-template-areas:'head' 'body' 'bottom';gap:9px;padding:20px;min-height:0}
+ .v4-services .service-card-body,.v4-services .service-card-bottom{padding-left:0}
+ .v4-services .service-card-bottom{justify-content:space-between;padding-top:12px;margin-top:5px;border-top:1px solid #55402e;flex-wrap:wrap}
+ .v4-services .service-card-price{font-size:1.75rem}
+ .v4-services .service-card-link{min-width:120px}
+ .v4-team .barber-card{padding:20px;gap:17px;flex-wrap:nowrap}
+ .v4-team .barber-card .avatar{width:66px;height:66px;font-size:34px}
+}
+@media (max-width:400px){
+ .v4-services .service-filter-tabs{gap:5px}
+ .v4-services .service-filter-tabs .filter-pill{font-size:11px;min-height:45px;padding:9px 3px}
+ .booking-day{min-width:76px}
+ .booking-date-panel .slots-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .booking-date-panel .slots-grid .slot{min-height:55px}
+ .v4-team .barber-card{gap:12px;padding:16px}
+}
+@media (prefers-reduced-motion:reduce){.booking-day,.slot,.service-v5-card,.barber-card{transition:none!important;animation:none!important}}
+
+.booking-scroll-tip{display:none;margin:10px 3px 0;color:#b7a48d;font-size:11px;letter-spacing:.01em}
+@media(max-width:540px){.booking-scroll-tip{display:block}}

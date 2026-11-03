@@ -1,0 +1,101 @@
+/* MARTELLI VIP V21 — identidade visual preto, creme e dourado */
+.martelli-vip{position:relative;background:radial-gradient(ellipse at 86% 14%,#3a2918 0%,transparent 48%),linear-gradient(145deg,#13100e,#201711 68%,#100e0d);color:#f8eee0;padding:clamp(65px,9vw,112px) 0;border-top:1px solid #6e5739;border-bottom:1px solid #6e5739}
+.martelli-vip .vip-public-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.13fr);align-items:center;gap:clamp(22px,6vw,90px)}
+.martelli-vip .eyebrow{color:#e3b875;letter-spacing:.15em}
+.martelli-vip h2{font-family:'DM Serif Display',Georgia,serif;font-weight:400;color:#f8eee0;font-size:clamp(2.45rem,5.3vw,5rem);line-height:1.08;margin:13px 0 22px}
+.martelli-vip h2 em{color:#dcb46f;font-weight:400}
+.martelli-vip p{color:#d5c5b3;line-height:1.75;max-width:640px}
+.martelli-vip .vip-feature{list-style:none;margin:24px 0 30px;padding:0;display:grid;gap:12px}
+.martelli-vip .vip-feature li{display:flex;gap:12px;align-items:flex-start;color:#f0e2d1;font-size:.93rem}
+.martelli-vip .vip-feature li::before{content:'✓';display:grid;place-items:center;color:#17120d;background:#dfbd7f;border-radius:50%;width:22px;height:22px;flex:0 0 22px;font-weight:800}
+.martelli-vip .vip-public-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.martelli-vip .vip-smallprint{font-size:.75rem;margin-top:18px;max-width:680px;color:#b7a691}
+.martelli-vip .vip-display{background:#241c16;border:1px solid #775b38;border-radius:18px;padding:clamp(24px,3vw,38px);box-shadow:0 25px 70px #0006;position:relative;overflow:hidden}
+.martelli-vip .vip-display::before{content:'VIP';position:absolute;right:-9px;top:-20px;color:#ddbd7914;font:700 135px/1 'Manrope',sans-serif;pointer-events:none}
+.martelli-vip .vip-display-heading{display:flex;justify-content:space-between;align-items:center;gap:15px;border-bottom:1px solid #6f5337;padding-bottom:18px;margin-bottom:15px}
+.martelli-vip .vip-display-heading strong{font:400 1.5rem/1.2 'DM Serif Display',Georgia,serif;color:#f8e5c7}
+.martelli-vip .vip-gold-tag{border:1px solid #c59f68;border-radius:20px;padding:5px 10px;font:700 .68rem/1.3 'Manrope',sans-serif;letter-spacing:.08em;color:#e7c68e}
+.martelli-vip .vip-public-plan{padding:15px 0;border-bottom:1px solid #534333;display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px}
+.martelli-vip .vip-public-plan h3{font:400 1.28rem/1.2 'DM Serif Display',Georgia,serif;margin:0 0 8px;color:#fff1da}
+.martelli-vip .vip-public-plan p{font-size:.82rem;margin:0 0 7px;line-height:1.5}
+.martelli-vip .vip-public-plan small{font:.76rem 'Manrope',sans-serif;color:#e9c993}
+.martelli-vip .vip-public-plan .vip-public-price{font:700 1.17rem/1.3 'Manrope',sans-serif;color:#edce91;text-align:right;white-space:nowrap}
+.martelli-vip .vip-public-plan .vip-public-price small{display:block;font-size:.73rem}
+.martelli-vip .vip-no-plans{padding:18px 0 4px;color:#dbc3a2;font-size:.93rem}
+.martelli-vip .vip-section-mark{color:#e0c28f;letter-spacing:.18em;font-weight:700;font-size:.7rem;text-transform:uppercase}
+.vip-admin{background:#11100e;color:#f5eade;min-height:100vh;font-family:'Manrope',Arial,sans-serif;padding:30px max(22px,calc((100vw - 1370px)/2)) 70px}
+.vip-admin-header{display:flex;gap:22px;align-items:center;padding:9px 0 29px;border-bottom:1px solid #5b4733;margin-bottom:25px}
+.vip-admin-header img{object-fit:contain;max-height:90px}
+.vip-admin-intro{flex:1}.vip-admin-intro h1{font:400 clamp(2rem,4vw,3.4rem)/1.14 'DM Serif Display',Georgia,serif;margin:7px 0;color:#fff1e1}.vip-admin-intro h1 em{color:#dfbe80}.vip-admin-intro p{color:#bead9b;font-size:13px;margin:7px 0}
+.vip-admin-links{display:flex;gap:11px;flex-wrap:wrap}.vip-admin-links a{border:1px solid #665039;padding:10px 13px;border-radius:7px;color:#f0d3a1;text-decoration:none;font-size:12px}.vip-admin-links a:hover{background:#32261a}
+.vip-admin h2{font:400 1.8rem/1.2 'DM Serif Display',Georgia,serif;color:#f9ebd7;margin:7px 0 9px}
+.vip-admin .eyebrow{color:#e8c080;font:700 .68rem 'Manrope',sans-serif;letter-spacing:.12em}
+.vip-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-bottom:25px}
+.vip-summary article{background:#231c16;border:1px solid #5d4630;border-radius:12px;padding:18px 22px}.vip-summary span,.vip-summary small{display:block;color:#d1b894;font-size:12px}.vip-summary strong{font:600 2.2rem 'Manrope',sans-serif;display:block;color:#fff;margin:8px 0}
+.vip-admin-panel{background:#1d1815;border:1px solid #604a33;border-radius:14px;padding:24px;margin-bottom:23px}
+.vip-admin-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:15px}.vip-admin-toolbar p{font-size:12px;color:#c2b3a2;margin:0}
+.vip-button,.vip-row-actions button,.vip-plan-top button{cursor:pointer;border:1px solid #826448;border-radius:7px;padding:10px 14px;background:#292019;color:#ead5bb;font:700 12px 'Manrope',sans-serif}
+.vip-primary{background:#e6c48c;color:#21170d;border-color:#e6c48c}.vip-button:hover,.vip-row-actions button:hover,.vip-plan-top button:hover{filter:brightness(1.17)}.vip-outline{background:transparent;color:#f0d1a1}
+.vip-admin-filters{display:flex;gap:12px;flex-wrap:wrap;margin:15px 0}.vip-admin-filters label,.vip-dialog-fields label{font-size:12px;color:#ebc993;display:grid;gap:7px;min-width:180px}.vip-admin input,.vip-admin select,.vip-dialog input,.vip-dialog select,.vip-dialog textarea{box-sizing:border-box;background:#130f0d;border:1px solid #77583a;color:#f5e9dc;border-radius:7px;padding:11px 13px;font:500 13px 'Manrope',sans-serif;min-width:0;max-width:100%;color-scheme:dark}
+.vip-admin-filters input{min-width:280px}.vip-admin-filters select{min-width:170px}.vip-table-scroll{width:100%;overflow:auto}
+.vip-table{width:100%;border-collapse:collapse;min-width:740px;text-align:left;font-size:13px}.vip-table th{font-size:11px;color:#dab97e;border-bottom:1px solid #775739;padding:14px 11px}.vip-table td{padding:16px 11px;border-bottom:1px solid #493c30;vertical-align:middle;color:#f2e6d6}.vip-table td strong,.vip-table td small{display:block}.vip-table td small{margin-top:4px;color:#ad9d8b;font-size:11px}.vip-empty{text-align:center;color:#b7a791!important;padding:30px!important}.vip-row-actions{display:flex;gap:6px;flex-wrap:wrap}.vip-row-actions button{padding:7px 10px;font-size:11px;white-space:nowrap}.vip-row-actions .vip-danger{color:#ffbdb3;border-color:#9b4a47}
+.vip-progress{height:5px;width:90px;background:#514031;border-radius:8px;overflow:hidden;margin-top:9px}.vip-progress span{display:block;height:100%;background:#dfbd80}
+.vip-status{display:inline-block;border:1px solid #706047;border-radius:15px;padding:4px 9px;background:#443323;color:#eed19c;font-size:11px;white-space:nowrap}.vip-status.active{background:#203f30;color:#bceac8;border-color:#3d7154}.vip-status.paused,.vip-status.scheduled{background:#413525;color:#edd9a9}.vip-status.cancelled,.vip-status.expired{background:#462a28;border-color:#79463e;color:#ffc1b8}
+.vip-plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px}.vip-plan-item{border:1px solid #70553a;border-radius:12px;padding:20px;background:linear-gradient(145deg,#2d2118,#1b1714)}.vip-plan-item h3{font:400 1.6rem 'DM Serif Display',Georgia,serif;margin:14px 0;color:#f3e6cf}.vip-plan-item>strong{display:block;font:700 1.65rem 'Manrope',sans-serif;color:#e8c88e;margin:10px 0}.vip-plan-item>strong small{font-size:.75rem}.vip-plan-item p{font-size:12px;color:#c3b19f;line-height:1.55}.vip-plan-item>span{font-size:11px;color:#e8c588}.vip-plan-top{display:flex;justify-content:space-between;gap:12px;align-items:center}.vip-inactive{opacity:.62}
+.vip-admin-disclaimer{font-size:12px;color:#c4b4a3;line-height:1.7;max-width:980px}
+#vip-alert{padding:13px 16px;margin-bottom:20px;border-radius:7px;border:1px solid #658062;background:#213929;color:#ecffee}.vip-error{border-color:#9c534b!important;background:#442424!important;color:#ffe4e0!important}
+.vip-dialog{width:min(660px,calc(100vw - 28px));max-height:92vh;overflow:auto;background:#211a15;border:1px solid #9c764c;border-radius:15px;color:#f1e5d7;padding:25px;box-shadow:0 30px 80px #000b}.vip-dialog::backdrop{background:#000c}.vip-dialog-header{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.vip-dialog h2{font:400 1.8rem 'DM Serif Display',Georgia,serif;color:#fff0df;margin:0 0 23px}.vip-icon-close{background:transparent;border:1px solid #785e40;border-radius:7px;color:#f0d5b2;cursor:pointer;padding:6px 13px;font-size:20px}.vip-dialog-fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}.vip-dialog-fields .vip-wide,.vip-dialog-fields .vip-note,.vip-usage-history{grid-column:1/-1}.vip-dialog textarea{resize:vertical}.vip-check{display:flex!important;align-items:center;gap:9px!important}.vip-check input{width:auto!important}.vip-note{font-size:12px;color:#bfae9e;line-height:1.6;margin:0}.vip-dialog-error{color:#ffbdba;border:1px solid #a04e4e;background:#472222;padding:9px;border-radius:7px;font-size:12px}.vip-dialog-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:23px}.vip-dialog button:focus-visible,.vip-admin button:focus-visible,.martelli-vip a:focus-visible{outline:2px solid #f2d098;outline-offset:4px}.vip-usage-history{max-height:290px;overflow:auto;font-size:13px;line-height:1.9;color:#dec5a6}
+@media(max-width:850px){.martelli-vip .vip-public-inner{grid-template-columns:1fr}.vip-admin-header{align-items:flex-start;flex-wrap:wrap}.vip-admin-links{width:100%}.vip-summary{grid-template-columns:1fr 1fr}.vip-admin{padding:20px 16px}}
+@media(max-width:570px){.vip-summary{grid-template-columns:1fr}.vip-admin-panel{padding:17px}.vip-dialog-fields{grid-template-columns:1fr}.vip-admin-filters label,.vip-admin-filters input,.vip-admin-filters select{width:100%;min-width:0}.martelli-vip .vip-public-plan{grid-template-columns:1fr}.martelli-vip .vip-public-plan .vip-public-price{text-align:left}}
+
+/* V21.1 — CTA da assinatura na área principal: legível, dourado e responsivo. */
+.hero-v4-ref .hero-actions .hero-vip-cta {
+  background:linear-gradient(135deg,#332315,#19130f);
+  border:1px solid #d2ad72;
+  color:#f2d6a1;
+  box-shadow:inset 0 0 0 1px rgba(233,192,118,.12);
+}
+.hero-v4-ref .hero-actions .hero-vip-cta:hover {
+  background:#e7c58b;
+  color:#201710;
+  border-color:#f2d9ad;
+  box-shadow:0 6px 24px rgba(0,0,0,.28);
+}
+.hero-v4-ref .hero-actions .hero-vip-cta:focus-visible {
+  outline:2px solid #fff1d5;
+  outline-offset:4px;
+}
+@media (prefers-reduced-motion:reduce) {
+  .hero-v4-ref .hero-actions .hero-vip-cta {transition:none}
+}
+/* V22 — fila de pedidos VIP com ações separadas das assinaturas ativas */
+.vip-requests-count{display:inline-block;vertical-align:middle;font:700 12px 'Manrope',sans-serif;color:#e9ce9b;border:1px solid #7c5f43;background:#39281c;padding:7px 10px;border-radius:20px;margin-left:8px}
+.vip-requests-message{padding:14px;color:#f6dbb8;background:#42321e;border:1px solid #8e7042;border-radius:9px;margin:12px 0;font:500 12px/1.7 'Manrope',sans-serif}
+.martelli-vip .vip-public-plan .vip-card-select{display:inline-block;padding:8px 12px;border:1px solid #b99258;border-radius:5px;transition:background .2s,color .2s}
+.martelli-vip .vip-public-plan .vip-card-select:hover{background:#e5bd80;color:#21160d}
+
+/* V23: compartilhamento de agenda VIP */
+.vip-link-label{display:grid;gap:8px;font-size:.82rem;color:#e6c288;margin:20px 0}.vip-link-label input{width:100%;padding:13px;border:1px solid #926d48;border-radius:8px;background:#110e0c;color:#f8e4c6}.vip-dialog-actions{flex-wrap:wrap}.vip-dialog-actions a{text-decoration:none;display:inline-flex;align-items:center}.vip-dialog-actions a:focus-visible{outline:2px solid #e6c288}
+
+/* Martelli V27 — retorno e revisão segura de cadastros VIP */
+.vip-admin-links .vip-back-link{border-color:#d6b77e;background:#2b2118;color:#f7e5c6;font-weight:750}
+.vip-admin-links .vip-back-link:hover{background:#463222;transform:translateX(-2px)}
+.vip-admin-toolbar-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.vip-admin-links a,.vip-admin-toolbar-actions button{transition:background .2s ease,transform .2s ease}
+@media(max-width:600px){.vip-admin-toolbar-actions{width:100%}.vip-admin-toolbar-actions button{flex:1}}
+
+.vip-join-alert a{color:#ffe0a7;text-decoration:underline;font-weight:750}
+
+/* V28: exclusões restritas ao proprietário */
+.vip-row-actions .vip-danger{background:#351d1c;border-color:#a95950;color:#ffd0c7}.vip-row-actions .vip-danger:hover{background:#572b28}.vip-delete-warning{border:1px solid #a95950;border-radius:8px;background:#3b2220;padding:13px!important;color:#ffddd2!important}
+
+/* V37 — Cadastro VIP e assinatura personalizada */
+.vip-choice-set{display:flex;flex-wrap:wrap;gap:10px 16px;border:1px solid #745638;border-radius:10px;padding:13px;margin:0;min-width:0;}
+.vip-choice-set legend{color:#edcb95;font-size:12px;font-weight:700;padding:0 8px;}
+.vip-choice-set label{display:flex;flex-direction:row;align-items:center;min-width:0;gap:7px;color:#f0e0cf;font-size:12px;cursor:pointer;}
+.vip-choice-set input[type=radio]{width:auto;accent-color:#dfb676;padding:0;margin:0;}
+.vip-form-section{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;align-items:start;}
+.vip-form-section>p,.vip-form-section>.vip-wide,.vip-form-section>.vip-step-label{grid-column:1/-1;}
+.vip-form-section[hidden]{display:none!important;}
+.vip-step-label{color:#f0cf94;font-size:12px;font-weight:800;}
+@media(max-width:570px){.vip-form-section{grid-template-columns:1fr;}.vip-choice-set{flex-direction:column;}}

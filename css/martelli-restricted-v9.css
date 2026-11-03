@@ -1,0 +1,111 @@
+/* Martelli V9 — telas de acesso restrito; identidade visual da barbearia */
+body{background:#0d0e0f;color:#f7f1e9;min-height:100vh}
+.restricted-shell{max-width:1200px;margin:0 auto;padding:30px clamp(16px,3.5vw,45px) 60px;min-height:100vh;font-family:Manrope,system-ui,sans-serif}
+.restricted-header{display:flex;align-items:center;gap:22px;border-bottom:1px solid #564636;padding-bottom:24px;margin-bottom:27px}
+.restricted-header img{object-fit:contain}.restricted-header>div{flex:1;min-width:0}
+.restricted-header h1{font-size:clamp(28px,4vw,44px);line-height:1.15;color:#fff;margin:8px 0}.restricted-header p{color:#ddcbb7;font-size:14px;margin:0}
+.restricted-shell .eyebrow{display:block;font-size:11px;letter-spacing:.16em;font-weight:800;color:#e7c794}
+.restricted-content{background:#171514;border:1px solid #564635;border-radius:13px;padding:clamp(18px,2.5vw,29px);margin-bottom:22px;box-shadow:0 7px 20px #0003}
+.restricted-content h2{font-size:22px;color:#fff;margin:0 0 13px}
+.restricted-overview{display:grid;grid-template-columns:1fr 1fr auto;gap:16px;align-items:center;margin-bottom:22px}
+.restricted-overview>div{padding:19px;background:#272019;border:1px solid #624931;border-radius:10px;min-height:118px;display:flex;flex-direction:column;gap:7px}.restricted-overview strong{font-size:29px;color:#fff}.restricted-overview small{color:#d5c3ae}
+.restricted-primary,.restricted-outline{display:inline-flex;justify-content:center;align-items:center;gap:8px;border-radius:7px;padding:12px 18px;min-height:45px;font-size:13px;font-weight:800;text-decoration:none;cursor:pointer;transition:transform .15s ease,background .15s ease}
+.restricted-primary{background:#e7c794;color:#15100b;border:1px solid #e7c794}.restricted-outline{background:transparent;color:#e7c794;border:1px solid #7a6040}.restricted-primary:hover,.restricted-outline:hover{transform:translateY(-2px)}.restricted-outline:hover{background:#32261b}
+.restricted-list-header{display:flex;align-items:baseline;justify-content:space-between;gap:15px;flex-wrap:wrap}.restricted-list-header p,.restricted-help,.restricted-footnote{font-size:13px;color:#c9bba9}.restricted-footnote{text-align:center}
+.restricted-table-wrapper{overflow-x:auto}.restricted-table{width:100%;border-collapse:collapse;min-width:530px;text-align:left}.restricted-table th{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#e7c794;border-bottom:1px solid #685039;padding:13px 11px}.restricted-table td{padding:17px 11px;border-bottom:1px solid #3c3229;vertical-align:middle;font-size:14px;color:#f6ece1}.restricted-table tbody tr:hover{background:#2b241f}.restricted-table td strong{display:block;color:#fff}.restricted-table td small{color:#dac8b4}.restricted-chip{display:inline-block;border-radius:5px;background:#453323;color:#ead2a7;padding:5px 9px;font-size:12px}
+.restricted-empty{text-align:center;padding:35px;border:1px dashed #6b5641;border-radius:10px;color:#e6d3bd}
+.restricted-alert{padding:12px 14px;border:1px solid #896c43;border-radius:7px;background:#292015;color:#f8ddae;margin:12px 0}.restricted-alert[hidden]{display:none}
+.restricted-admin-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,1fr);gap:24px;align-items:start}.restricted-admin-grid .restricted-content{min-width:0}
+.restricted-form{display:flex;flex-direction:column;gap:14px}.restricted-form label{display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:700;color:#f4e7d8}.restricted-form label small{font-size:11px;color:#d2bca7;font-weight:400}.restricted-form input,.restricted-form select{width:100%;background:#13100f;color:#fff;border:1px solid #665039;border-radius:7px;padding:12px;min-height:46px;font-size:15px}
+.restricted-form input:focus,.restricted-form select:focus{outline:2px solid #e7c794;outline-offset:1px}.restricted-account{display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:1px solid #44382a;padding:15px 0}.restricted-account:last-child{border-bottom:0}.restricted-account strong,.restricted-account small{display:block}.restricted-account small{font-size:12px;color:#c1b3a4;margin-top:4px}.restricted-account div:last-child{display:flex;flex-wrap:wrap;gap:6px}.restricted-account .restricted-outline{padding:7px 10px;min-height:35px}.restricted-account .status-disabled{color:#f0a2a2}.restricted-form .restricted-primary{align-self:stretch}
+@media(max-width:760px){.restricted-header{gap:10px;flex-wrap:wrap}.restricted-header img{width:77px;height:64px}.restricted-header>div{min-width:180px}.restricted-header>.restricted-outline{margin-left:auto}.restricted-admin-grid{grid-template-columns:1fr}.restricted-overview{grid-template-columns:1fr 1fr}.restricted-overview .restricted-primary{grid-column:1/-1}.restricted-account{align-items:flex-start;flex-direction:column}}
+@media(max-width:400px){.restricted-overview{grid-template-columns:1fr}.restricted-overview .restricted-primary{grid-column:auto}}
+@media(prefers-reduced-motion:reduce){.restricted-primary,.restricted-outline{transition:none}}
+
+/* V11 — disponibilidade do próprio profissional */
+.barber-slots-section{margin:6px 0 28px;padding:20px;border:1px solid #62503c;border-radius:10px;background:#1b1714}
+.barber-slots-title{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.barber-slots-title h2{margin:0 0 5px}.barber-slots-title p{margin:0;color:#cbb9a4;font-size:13px;max-width:550px}
+.barber-slot-legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;align-self:center}
+.barber-slot-legend span:before{content:'';display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+.barber-legend-free:before{background:#499e6d}.barber-legend-busy:before{background:#d96868}.barber-legend-past:before{background:#989089}
+.barber-slot-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.barber-slot{appearance:none;min-width:0;min-height:65px;padding:10px 5px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:9px;border:1px solid #584838;background:#251d17;color:#f7f1e9}
+.barber-slot strong{font-size:16px}.barber-slot small{font-size:11px}.barber-slot-occupied{background:#462323;border-color:#9f5151;color:#ffe7e7}.barber-slot-past,.barber-slot-unavailable{background:#262321;border-color:#46403a;color:#aaa098}
+button.barber-slot-available{background:#183528;border-color:#498b62;color:#baf3ce;cursor:pointer;transition:transform .16s ease,box-shadow .16s ease}
+button.barber-slot-available:hover{transform:translateY(-2px);box-shadow:0 4px 18px #0007;border-color:#7fdba4}
+.barber-booking-panel{background:#272019;border:1px solid #b18c5a;border-radius:10px;padding:22px;margin:0 0 28px}.barber-booking-panel[hidden]{display:none}
+.barber-booking-panel .restricted-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 18px}
+.barber-booking-buttons{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px}.barber-booking-buttons button{flex:1}
+@media(max-width:680px){.barber-slot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.barber-booking-panel .restricted-form{grid-template-columns:1fr}}
+@media(max-width:390px){.barber-slot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){button.barber-slot-available{transition:none}}
+
+/* V12 — interação da grade e controles de agendamento da equipe */
+.restricted-header>a:first-child{display:inline-flex;align-items:center;border-radius:8px;transition:filter .15s ease,transform .15s ease}
+.restricted-header>a:first-child:hover{filter:brightness(1.18);transform:translateY(-1px)}
+.restricted-header>a:first-child:focus-visible{outline:3px solid #e7c794;outline-offset:6px}
+.barber-slot-grid button.barber-slot-available{font:inherit;user-select:none;touch-action:manipulation}
+.barber-slot-grid button.barber-slot-available:focus-visible{outline:3px solid #e7c794;outline-offset:2px}
+.barber-slot-grid button.barber-slot-available[aria-pressed="true"]{border:2px solid #f0ce8c;box-shadow:0 0 0 2px #b18c5a66;background:#204630}
+.staff-booking-permission{display:flex!important;flex-direction:row!important;align-items:flex-start;gap:10px!important;line-height:1.5;padding:12px;border:1px solid #6b5138;border-radius:8px;background:#262019}
+.staff-booking-permission input[type="checkbox"]{width:18px;min-height:18px;height:18px;flex:0 0 18px;margin:2px 0 0;accent-color:#e7c794}
+@media(prefers-reduced-motion:reduce){.restricted-header>a:first-child{transition:none}}
+
+/* V15 — remarcar somente agendamentos próprios confirmados */
+.barber-reschedule-panel .restricted-help{margin:0 0 15px}
+.barber-reschedule-panel[hidden]{display:none}
+.barber-reschedule-panel #barber-reschedule-feedback{grid-column:1/-1;min-height:24px;margin:0}
+.barber-move-action{min-height:36px;padding:7px 11px;white-space:nowrap;font-size:12px}
+.restricted-muted{color:#928578}
+.barber-notify-link{color:#e7c794;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.barber-notify-link:hover{color:#fff}
+@media(max-width:700px){.restricted-table{min-width:620px}.barber-reschedule-panel .restricted-form{grid-template-columns:1fr}}
+
+/* V16 — botão de conclusão no painel do barbeiro */
+.barber-row-actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.restricted-complete{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:7px 11px;border-radius:7px;border:1px solid #4c9870;background:#183a2a;color:#c7f3d7;font:inherit;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap;transition:filter .15s,transform .15s}
+.restricted-complete:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.restricted-complete:focus-visible{outline:3px solid #e7c794;outline-offset:2px}
+.restricted-complete:disabled{opacity:.5;cursor:progress}
+@media(prefers-reduced-motion:reduce){.restricted-complete{transition:none}}
+
+
+/* V17 — decidir solicitações pendentes do próprio profissional */
+.barber-accept-action,.barber-reject-action{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:7px 11px;border-radius:7px;font:inherit;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap;transition:transform .15s ease,filter .15s ease}
+.barber-accept-action{background:#183a2a;border:1px solid #478b65;color:#d4f5de}
+.barber-reject-action{background:#3c2020;border:1px solid #a75b5b;color:#ffd5d5}
+.barber-accept-action:hover,.barber-reject-action:hover{filter:brightness(1.2);transform:translateY(-1px)}
+.barber-accept-action:disabled,.barber-reject-action:disabled{opacity:.5;cursor:wait;transform:none}
+.barber-accept-action:focus-visible,.barber-reject-action:focus-visible{outline:3px solid #e7c794;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.barber-accept-action,.barber-reject-action{transition:none}}
+
+/* V18 — quatro ações na agenda do profissional */
+.barber-status-actions{max-width:245px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.barber-status-actions button{width:100%;min-height:36px;font-size:12px;text-align:center;padding:7px 9px;white-space:nowrap}
+.barber-status-actions button:disabled{opacity:.43;cursor:not-allowed;transform:none}
+.barber-cancel-action,.barber-no-show-action{display:inline-flex;align-items:center;justify-content:center;min-height:36px;border-radius:7px;font:inherit;font-size:12px;font-weight:800;cursor:pointer;transition:transform .15s ease,filter .15s ease}
+.barber-cancel-action{background:#3e2220;border:1px solid #af6258;color:#fbd9d4}
+.barber-no-show-action{background:#2b2317;border:1px solid #9a7850;color:#f3d9ab}
+.barber-cancel-action:hover:not(:disabled),.barber-no-show-action:hover:not(:disabled){filter:brightness(1.15);transform:translateY(-1px)}
+.barber-cancel-action:focus-visible,.barber-no-show-action:focus-visible{outline:3px solid #e7c794;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.barber-cancel-action,.barber-no-show-action{transition:none}}
+
+/* Martelli V18.2: aviso de operação antecipada, sem desativar os botões. */
+.barber-actions-locked-note{grid-column:1/-1;color:#d5b487;font-size:11px;line-height:1.35;margin-top:0;text-align:center}
+
+/* Martelli V18.3 — navegação entre dias no painel individual do barbeiro. */
+.barber-date-summary{min-width:0}
+.barber-date-nav{display:flex;align-items:center;gap:9px;margin:10px 0 7px;min-width:0}
+.barber-date-nav strong{flex:1;min-width:0;font-size:clamp(17px,2vw,27px);line-height:1.25;overflow-wrap:break-word}
+.barber-date-arrow{appearance:none;flex:none;width:37px;height:42px;display:inline-flex;align-items:center;justify-content:center;background:#201a15;color:#f0cea0;border:1px solid #745738;border-radius:9px;font:inherit;font-size:29px;font-weight:500;cursor:pointer;touch-action:manipulation;transition:background .15s,border-color .15s}
+.barber-date-arrow:hover:not(:disabled){background:#3a2a1d;border-color:#edc48f}
+.barber-date-arrow:focus-visible,.barber-date-reset:focus-visible{outline:3px solid #e7c794;outline-offset:2px}
+.barber-date-arrow:disabled{opacity:.32;cursor:not-allowed}
+.barber-date-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:26px;flex-wrap:wrap}
+.barber-date-foot small{font-size:12px;color:#dbc4a7;text-transform:capitalize}
+.barber-date-reset{appearance:none;background:#e7c794;color:#16110e;border:1px solid #e7c794;border-radius:7px;padding:5px 12px;font:inherit;font-weight:800;font-size:12px;cursor:pointer;touch-action:manipulation}
+.barber-date-reset:hover:not(:disabled){background:#f8dfb6}
+.barber-date-reset[hidden]{display:none}
+@media(max-width:760px){.barber-date-nav{gap:7px}.barber-date-arrow{width:40px;height:42px}.barber-date-nav strong{font-size:clamp(17px,4.7vw,22px)}}
+@media(prefers-reduced-motion:reduce){.barber-date-arrow{transition:none}}
